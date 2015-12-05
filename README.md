@@ -14,7 +14,7 @@ SNS機能付きアンケート集計サービス
 
 ## 利用する技術
 - CakePHP 2.6.12
-- PHP 5.5.29
+- PHP 5.6.8
 - JavaScript（jQuery）
 - CSS
 - Gulp
