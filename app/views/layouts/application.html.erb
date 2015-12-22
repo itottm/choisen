@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <title>Choisen</title>
+  <meta charset="UTF-8">
+  <title><%= page_title %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+<%=	render "shared/header" %>
+</header>
+<main>
 <%= yield %>
+</main>
+<footer>
+<%=	render "shared/footer" %>
+</footer>
 
 </body>
 </html>

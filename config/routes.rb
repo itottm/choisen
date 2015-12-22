@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'polls/index'
+  root 'top#index'
 
-  post 'polls/result'
+  # get 'polls/index'
+  # post 'polls/result'
+
+  resources :polls
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

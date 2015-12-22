@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20151220142305) do
 
   create_table "polls", force: :cascade do |t|
-    t.integer  "answer",      null: false
-    t.string   "remote_addr"
-    t.string   "user_agent"
-    t.date     "answer_date"
+    t.string   "title",      null: false
+    t.text     "question",   null: false
+    t.text     "answer",     null: false
+    t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
