@@ -1,0 +1,21 @@
+<% @page_title = @poll.title %>
+
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "編集する", [:edit, @poll] %></p>
+
+<table>
+  <tr>
+    <th>質問タイトル</th>
+    <td><%= @poll.title %></td>
+  </tr>
+  <tr>
+    <th>質問詳細</th>
+    <td><%= @poll.question %></td>
+  </tr>
+  <tr>
+    <th>選択肢</th>
+    <td><%= @poll.choice01 %><br>
+      <%= @poll.choice02 %></td>
+  </tr>
+</table>

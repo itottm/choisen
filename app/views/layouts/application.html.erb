@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title><%= page_title %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= yield :head if content_for?(:head) %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,11 +13,18 @@
 <%=	render "shared/header" %>
 </header>
 <main>
+<% if flash.notice %>
+<p class="notice"><%= flash.notice %></p>
+<% end %>
 <%= yield %>
 </main>
 <footer>
 <%=	render "shared/footer" %>
 </footer>
+
+
+
+<%= yield :foot if content_for?(:foot) %>
 
 </body>
 </html>

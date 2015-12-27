@@ -23,6 +23,12 @@ module Choisen
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    #config.action_controller.permit_all_parameters = true
+    config.action_controller.permit_all_parameters = true
+
+    # RailsでのJSとCSSの生成を停止（gulpで対応する為）
+    config.generators do |g|
+      g.assets false
+    end
+
   end
 end

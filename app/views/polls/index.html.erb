@@ -2,16 +2,34 @@
 
 <h1><%= @page_title %></h1>
 
+<%= form_tag :search_polls, method: :get do %>
+  <p>
+    <%= text_field_tag "q", params[:q] %>
+    <%= submit_tag "検索" %>
+  </p>
+<% end %>
+
+<p><%= link_to "あたらしく質問する", :new_poll %></p>
+
 <% if @polls.present? %>
   <% @polls.each do |poll| %>
-    <p>質問タイトル：<%= poll.title %><br>
+    <p>
+      <%= link_to poll do %>
+      質問タイトル：<%= poll.title %><br>
       質問内容：<%= poll.question %><br>
-      選択肢：<%= poll.answer %>
+      選択肢1：<%= poll.choice01 %><br>
+      選択肢2：<%= poll.choice02 %>
+        <% end %>
     </p>
+    <%= link_to "削除", poll, method: :delete,
+                data: {confirm: "本当に削除しますか？"}%>
   <% end %>
 <% else %>
   <p>現在質問がありません。</p>
 <% end %>
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
@@ -35,3 +53,10 @@
     $('.error').fadeOut(3000);
   })
 </script>
+
+<% content_for :head do %>
+  <%= stylesheet_link_tag gulp_asset_path('application.bundle.css') %>
+<% end %>
+<% content_for :foot do %>
+  <%= javascript_include_tag gulp_asset_path('application.bundle.js') %>
+<% end %>

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # get 'polls/index'
   # post 'polls/result'
 
-  resources :polls
+  resources :polls do
+    collection { get "search" }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
