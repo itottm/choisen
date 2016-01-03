@@ -12,15 +12,8 @@ class CreatePolls < ActiveRecord::Migration
       t.text :choice06
       t.text :choice07
       t.text :choice08
-      t.integer :answer01, null: false, default: 0
-      t.integer :answer02, null: false, default: 0
-      t.integer :answer03, default: 0
-      t.integer :answer04, default: 0
-      t.integer :answer05, default: 0
-      t.integer :answer06, default: 0
-      t.integer :answer07, default: 0
-      t.integer :answer08, default: 0
       t.text :image
+      t.date :limit
       t.timestamps
     end
   end

@@ -1,0 +1,20 @@
+      Prefix Verb   URI Pattern                 Controller#Action
+        root GET    /                           top#index
+search_polls GET    /polls/search(.:format)     polls#search
+       polls GET    /polls(.:format)            polls#index
+             POST   /polls(.:format)            polls#create
+    new_poll GET    /polls/new(.:format)        polls#new
+   edit_poll GET    /polls/:id/edit(.:format)   polls#edit
+        poll GET    /polls/:id(.:format)        polls#show
+             PATCH  /polls/:id(.:format)        polls#update
+             PUT    /polls/:id(.:format)        polls#update
+             DELETE /polls/:id(.:format)        polls#destroy
+     answers GET    /answers(.:format)          answers#index
+             POST   /answers(.:format)          answers#create
+  new_answer GET    /answers/new(.:format)      answers#new
+ edit_answer GET    /answers/:id/edit(.:format) answers#edit
+      answer GET    /answers/:id(.:format)      answers#show
+             PATCH  /answers/:id(.:format)      answers#update
+             PUT    /answers/:id(.:format)      answers#update
+             DELETE /answers/:id(.:format)      answers#destroy
+Running via Spring preloader in process 3143

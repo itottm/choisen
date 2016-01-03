@@ -1,11 +1,12 @@
 class PollsController < ApplicationController
+  before_action :set_note,only:[:show,:edit,:update,:destroy]
 
   def index
     @polls = Poll.order('id')
   end
 
   def show
-    @poll = Poll.find(params[:id])
+    @answers = Answer.where(poll_id: params[:id]).group(:answer_num).count()
   end
 
   def new
@@ -13,7 +14,7 @@ class PollsController < ApplicationController
   end
 
   def edit
-    @poll = Poll.find(params[:id])
+
   end
 
   def create
@@ -26,8 +27,9 @@ class PollsController < ApplicationController
   end
 
   def update
-    @poll = Poll.find(params[:id])
+    # TODO : ストロングパラメータ対応する
     @poll.assign_attributes(params[:poll])
+    # @poll.increment!(:answer01,1000)
     if @poll.save
       redirect_to @poll, notice: "質問を更新しました。"
     else
@@ -36,7 +38,6 @@ class PollsController < ApplicationController
   end
 
   def destroy
-    @poll = Poll.find(params[:id])
     @poll.destroy
     redirect_to :polls, notice: "質問を削除しました"
   end
@@ -45,4 +46,9 @@ class PollsController < ApplicationController
     @polls = Poll.search(params[:q])
     render "index"
   end
+
+  private
+    def set_note
+      @poll = Poll.find(params[:id])
+    end
 end

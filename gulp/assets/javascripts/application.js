@@ -9,3 +9,6 @@ class Hoge {
 }
 
 new Hoge();
+
+var poll = document.getElementsByClassName("tbl_poll");
+poll.style.color = "#f00";

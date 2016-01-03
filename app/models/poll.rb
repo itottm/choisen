@@ -1,4 +1,6 @@
 class Poll < ActiveRecord::Base
+  has_many :answers
+
   class << self
     def search(query)
       rel = order("id")

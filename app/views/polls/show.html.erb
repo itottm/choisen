@@ -15,7 +15,38 @@
   </tr>
   <tr>
     <th>選択肢</th>
-    <td><%= @poll.choice01 %><br>
-      <%= @poll.choice02 %></td>
+    <td>
+      <%= form_for [@poll,@poll.answers.build] do |f| %>
+        <%=f.radio_button :answer_num, 1 %>
+        <%=f.label :answer_num, @poll.choice01, value: 1 %>
+        <%=f.radio_button :answer_num, 2 %>
+        <%=f.label :answer_num, @poll.choice02, value: 2 %>
+        <%=f.radio_button :answer_num, 3 %>
+        <%=f.label :answer_num, @poll.choice03, value: 3 %>
+        <%=f.radio_button :answer_num, 4 %>
+        <%=f.label :answer_num, @poll.choice04, value: 4 %>
+        <%=f.radio_button :answer_num, 5 %>
+        <%=f.label :answer_num, @poll.choice05, value: 5 %>
+        <%=f.radio_button :answer_num, 6 %>
+        <%=f.label :answer_num, @poll.choice06, value: 6 %>
+        <%=f.radio_button :answer_num, 7 %>
+        <%=f.label :answer_num, @poll.choice07, value: 7 %>
+        <%=f.radio_button :answer_num, 8 %>
+        <%=f.label :answer_num, @poll.choice08, value: 8 %>
+        <p><%= f.submit '投票する' %></p>
+      <% end %>
+
+      <!--<% @poll.answers.each do |answer| %>-->
+        <!--<%= answer.answer_num %>-->
+      <!--<% end %>-->
+
+      <% @answers.each do |key,value| %>
+        <p>
+        <%= key %>→
+        <%= value %>
+        </p>
+      <% end %>
+
+    </td>
   </tr>
 </table>
