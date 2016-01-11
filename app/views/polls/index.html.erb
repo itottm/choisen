@@ -9,54 +9,39 @@
   </p>
 <% end %>
 
-<p><%= link_to "あたらしく質問する", :new_poll %></p>
+<p><%= link_to 'あたらしく質問する', :new_poll %></p>
 
 <% if @polls.present? %>
   <% @polls.each do |poll| %>
     <p>
       <%= link_to poll do %>
       質問タイトル：<%= poll.title %><br>
-      質問内容：<%= poll.question %><br>
-      選択肢1：<%= poll.choice01 %><br>
-      選択肢2：<%= poll.choice02 %>
-        <% end %>
+      質問内容：<%= poll.question %>
+      <% end %>
     </p>
-    <%= link_to "削除", poll, method: :delete,
-                data: {confirm: "本当に削除しますか？"}%>
+    <%= link_to '削除', poll, method: :delete,
+                data: {confirm: '本当に削除しますか？'} %>
   <% end %>
 <% else %>
   <p>現在質問がありません。</p>
 <% end %>
 
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>
-  $(function(){
-    'use strict';
-
-    $('.box').on('click', function(){
-      $('.box').removeClass('selected');
-      $(this).addClass('selected');
-      $('#answer').val($(this).data('id'));
-    });
-
-    $('#btn').on('click',function(){
-      if($('#answer').val() === ''){
-        alert('Choose One!');
-      }else{
-        $('form').submit();
-      }
-    });
-
-    $('.error').fadeOut(3000);
-  })
+<p id="time"><%= @time %></p>
+<script type="text/javascript" charset="utf-8">
+//  var update;
+//
+//  $(function() {
+//    var timer;
+//    return timer = setInterval(function() {
+//      return update();
+//    }, 5000);
+//  });
+//
+//  update = function() {
+//    $.ajax({
+//      url: 'polls/ajax_action',
+//      type: 'GET'
+//    });
+//  };
 </script>
-
-<% content_for :head do %>
-  <%= stylesheet_link_tag gulp_asset_path('application.bundle.css') %>
-<% end %>
-<% content_for :foot do %>
-  <%= javascript_include_tag gulp_asset_path('application.bundle.js') %>
-<% end %>

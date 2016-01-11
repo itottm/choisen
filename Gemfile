@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'seed-fu', '~> 2.3'
+gem 'websocket-rails'
+
 
 gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'

@@ -16,7 +16,22 @@
   <tr>
     <th>選択肢</th>
     <td>
-      <%= form_for [@poll,@poll.answers.build] do |f| %>
+      <%
+        str = @poll.choice02
+      %>
+      <%= splitText = str.split(' /// ') %><br>
+      <%= splitText[0] %><br>
+      <%= splitText[1] %><br>
+      <%= splitText[2] %><br>
+      <%= splitText[3] %><br>
+
+      <%= splitText.each do |value| %>
+        <p><%= value %></p>
+      <% end %>
+
+
+
+        <%= form_for [@poll,@poll.answers.build] do |f| %>
         <%=f.radio_button :answer_num, 1 %>
         <%=f.label :answer_num, @poll.choice01, value: 1 %>
         <%=f.radio_button :answer_num, 2 %>
@@ -35,18 +50,7 @@
         <%=f.label :answer_num, @poll.choice08, value: 8 %>
         <p><%= f.submit '投票する' %></p>
       <% end %>
-
-      <!--<% @poll.answers.each do |answer| %>-->
-        <!--<%= answer.answer_num %>-->
-      <!--<% end %>-->
-
-      <% @answers.each do |key,value| %>
-        <p>
-        <%= key %>→
-        <%= value %>
-        </p>
-      <% end %>
-
     </td>
   </tr>
 </table>
+<p><%= link_to '結果だけ見る',result_path %></p>

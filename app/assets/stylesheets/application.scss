@@ -10,7 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- * require_tree .
- * require_self
+ *= require_tree .
+ *= require_self
  */
 
+html{
+  font-size:62.5%;
+}
+
+body {
+  background-color: #00CE9B;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック",sans-serif;
+  font-size:1.4rem;
+  margin:0;
+  padding:0;
+}
+
+header,
+footer{
+  background-color: #00ad82;
+}
+
+#chart {
+  position: relative;
+  width: 400px;
+}

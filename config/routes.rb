@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  root 'top#index'
+  root 'polls#index'
 
   # get 'polls/index'
   # post 'polls/result'
 
   resources :polls do
-    collection { get "search" }
+    collection { get 'search' }
     resources :answers, only:[:create]
+    get 'ajax_action', to: 'polls#ajax_action', on: :collection
   end
+
+  get '/results/:id' => 'polls#result',as:'result'
 
 
 

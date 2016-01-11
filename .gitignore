@@ -19,5 +19,3 @@
 # npm packages
 node_modules
 
-# ignore public/assets for compiled assets by gulp
-/public/assets

@@ -1,5 +1,5 @@
 class PollsController < ApplicationController
-  before_action :set_note,only:[:show,:edit,:update,:destroy]
+  before_action :set_note,only:[:show,:result,:edit,:update,:destroy]
 
   def index
     @polls = Poll.order('id')
@@ -7,6 +7,15 @@ class PollsController < ApplicationController
 
   def show
     @answers = Answer.where(poll_id: params[:id]).group(:answer_num).count()
+  end
+
+  def result
+    @answers = Answer.where(poll_id: params[:id]).group(:answer_num).count()
+    @time = Time.now()
+  end
+
+  def ajax_action
+    @time = Time.now()
   end
 
   def new
@@ -46,6 +55,7 @@ class PollsController < ApplicationController
     @polls = Poll.search(params[:q])
     render "index"
   end
+
 
   private
     def set_note

@@ -22,6 +22,10 @@
     </content>
     <orderEntry type="jdk" jdkName="rbenv: 2.2.1" jdkType="RUBY_SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="choisen node_modules" level="project" />
+    <orderEntry type="library" name="es6-collections-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="es6-promise-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="es6-promises-DefinitelyTyped" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v4.2.5, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionpack (v4.2.5, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionview (v4.2.5, rbenv: 2.2.1) [gem]" level="application" />
@@ -40,10 +44,15 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.10.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.0, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="daemons (v1.2.3, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="debug_inspector (v0.0.2, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="em-synchrony (v1.0.4, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.0.8, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.6.0, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="faye-websocket (v0.10.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.6, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hiredis (v0.6.1, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v0.7.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.3.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.0.5, rbenv: 2.2.1) [gem]" level="application" />
@@ -64,6 +73,8 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.5, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis (v3.2.2, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-objects (v1.2.1, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.4.20, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v5.0.4, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sdoc (v0.4.1, rbenv: 2.2.1) [gem]" level="application" />
@@ -73,6 +84,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets-es6 (v0.8.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.0.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.11, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thin (v1.6.4, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.19.1, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.5, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.1, rbenv: 2.2.1) [gem]" level="application" />
@@ -80,7 +92,9 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.7.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="web-console (v2.2.1, rbenv: 2.2.1) [gem]" level="application" />
-    <orderEntry type="library" name="choisen node_modules" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.6.3, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.2, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket-rails (v0.7.0, rbenv: 2.2.1) [gem]" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

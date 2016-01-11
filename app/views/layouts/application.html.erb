@@ -1,22 +1,15 @@
-<% content_for :head do %>
-  <%= stylesheet_link_tag gulp_asset_path('application.bundle.css') %>
-<% end %>
-<% content_for :foot do %>
-  <%= javascript_include_tag gulp_asset_path('application.bundle.js') %>
-<% end %>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title><%= page_title %></title>
-
-  <%= yield :head if content_for?(:head) %>
-
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name -%> <%= action_name -%>">
 <header>
-<%=	render "shared/header" %>
+<%=	render 'shared/header' %>
 </header>
 <main>
 <% if flash.notice %>
@@ -25,12 +18,7 @@
 <%= yield %>
 </main>
 <footer>
-<%=	render "shared/footer" %>
+<%=	render 'shared/footer' %>
 </footer>
-
-
-
-<%= yield :foot if content_for?(:foot) %>
-
 </body>
 </html>
