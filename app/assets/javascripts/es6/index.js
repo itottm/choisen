@@ -16,13 +16,13 @@ window.onload = function () {
   var choiceCount= 3;
   $(document).on('input','.choicesItem', function(){
     if(!$(this).closest('tr').next().length){
-      $(this).closest('tr').after(`<tr><th>選択肢${choiceCount} </th><td><input type="text" class="choicesItem"></td></tr>`);
+      $(this).closest('tr').after(`<tr><th><label for="choicesItem${choiceCount}">選択肢${choiceCount}</label> </th><td><input type="text" id="choicesItem${choiceCount}" class="choicesItem"></td></tr>`);
       choiceCount++;
     }
     let joinText = "";
     $(".choicesItem").each(function () {
       if ($(this).val()) {
-        joinText += $(this).val() + ' /// ';
+        joinText += $(this).val() + ' |||| ';
         $("#testIto").text(joinText);
         $("#choices_text").val(joinText);
       }

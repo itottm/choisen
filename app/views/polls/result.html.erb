@@ -1,9 +1,9 @@
-<% @page_title = @poll.title %>
+<%
+  @page_title = @poll.title
+  choices_array = @poll.choices.split(' |||| ')
+%>
 
 <h1><%= @page_title %></h1>
-
-</p>
-
 <div id="chart">
   <canvas id="myChart" width="400" height="200"></canvas>
 </div>
@@ -21,14 +21,9 @@
     <th>選択肢</th>
     <td>
       <ul>
-        <li><%= @poll.choice01 %></li>
-        <li><%= @poll.choice02 %></li>
-        <li><%= @poll.choice03 %></li>
-        <li><%= @poll.choice04 %></li>
-        <li><%= @poll.choice05 %></li>
-        <li><%= @poll.choice06 %></li>
-        <li><%= @poll.choice07 %></li>
-        <li><%= @poll.choice08 %></li>
+        <% choices_array.each do |value| %>
+          <li><%= value %></li>
+        <% end %>
       </ul>
     </td>
   </tr>
@@ -121,7 +116,7 @@
 
 <script>
 
-  var ws_rails = new WebSocketRails("localhost:3000/websocket");
+  var ws_rails = new WebSocketRails("localhost:3001/websocket");
   var websocket_chat_channel = ws_rails.subscribe("websocket_chat_channel");
 
   websocket_chat_channel.bind("websocket_chat", function(message){

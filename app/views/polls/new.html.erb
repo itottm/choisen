@@ -2,10 +2,8 @@
 
 <h1><%= @page_title %></h1>
 
-<p id="testIto">あ</p>
-
 <%= form_for @poll do |form| %>
-  <!--<%= render 'form', form: form %>-->
+  <%#= render 'form', form: form %>
   <table class="tbl_poll">
     <tr>
       <th><%= form.label :title, '質問タイトル' %></th>
@@ -16,21 +14,15 @@
       <td><%= form.text_field :question %></td>
     </tr>
     <tr>
-      <th><%= form.label 'choicesItem1', '選択肢1' %></th>
-      <td><%= form.text_field 'choicesItem', id: 'choicesItem1',class: 'choicesItem' %></td>
+      <th><label for="choicesItem1">選択肢1</label></th>
+      <td><input type="text" id="choicesItem1" class="choicesItem"></td>
     </tr>
     <tr>
-      <th><%= form.label 'choicesItem2', '選択肢2' %></th>
-      <td><%= form.text_field 'choicesItem', id: 'choicesItem2',class: 'choicesItem' %></td>
+      <th><label for="choicesItem2">選択肢2</label></th>
+      <td><input type="text" id="choicesItem2" class="choicesItem"></td>
     </tr>
   </table>
-  <%= form.hidden_field :choice01 , id: 'choices_text' %>
+  <%= form.hidden_field :choices , id: 'choices_text' %>
   <p><%= form.submit %></p>
 <% end %>
 
-<%
-  str = "Tokyo,Osaka,Nagoya"
-%>
-<% str2=str.split(',') %><br>
-<%= str.split(',') %><br>
-<%= str2.join('/') %>
