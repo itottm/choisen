@@ -26,12 +26,57 @@ body {
   padding:0;
 }
 
+a{
+  text-decoration:none;
+}
+
+ul{
+  list-style:none;
+}
+
 header,
 footer{
-  background-color: #00ad82;
+  background-color: #00bc8d;
+  text-align:center;
+}
+header{
+  .hdg{
+    margin:0;
+    padding:20px 0;
+    a{
+      color: #fff;
+    }
+  }
+}
+main{
+  margin-right:10px;
+  margin-left:10px;
 }
 
 #chart {
   position: relative;
   width: 400px;
+}
+
+.listPoll{
+  label{
+    display:block;
+  }
+  li{
+    margin-bottom:5px;
+  }
+}
+
+.notice{
+  border:1px solid blue;
+  padding:3px;
+  background-color:#ccf;
+}
+
+@media screen and (min-width: 960px){
+  main{
+    width:950px;
+    margin-right:auto;
+    margin-left:auto;
+  }
 }

@@ -22,19 +22,21 @@ ActiveRecord::Schema.define(version: 20151231002539) do
   end
 
   create_table "polls", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "question",   null: false
-    t.text     "choices",    null: false
+    t.string   "title",                  null: false
+    t.text     "question",               null: false
+    t.text     "choices",                null: false
     t.text     "image"
-    t.date     "limit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text     "limit",                  null: false
+    t.integer  "limit_flg",  default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.date     "birthday"
     t.integer  "gender"
+    t.date     "birthday"
+    t.integer  "age"
     t.integer  "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

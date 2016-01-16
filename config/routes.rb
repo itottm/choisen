@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   # post 'polls/result'
 
   resources :polls do
-    collection { get 'search' }
+    collection do
+      get 'search'
+      post 'confirm'
+    end
     resources :answers, only:[:create]
     get 'ajax_action', to: 'polls#ajax_action', on: :collection
   end

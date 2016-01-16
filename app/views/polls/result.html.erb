@@ -1,9 +1,17 @@
 <%
   @page_title = @poll.title
   choices_array = @poll.choices.split(' |||| ')
+  limit_time = @poll.limit
+  current_time = Time.current
 %>
 
+<% if limit_time > current_time %>
+    <%= '投票受付中' %>
+<% else %>
+    <%= '投票締め切りました' %>
+<% end %>
 <h1><%= @page_title %></h1>
+
 <div id="chart">
   <canvas id="myChart" width="400" height="200"></canvas>
 </div>

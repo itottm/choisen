@@ -1,26 +1,13 @@
 window.onload = function () {
 
-  console.log("あああおおおお");
-
-  //document.getElementById('poll_answer01').addEventListener("input", function () {
-  //  let list = document.createElement('li');
-  //  list.className = 'list';
-  //  list.innerHTML = 'あ〜〜';
-  //
-  //
-  //  var myMain = document.getElementsByTagName("main");
-  //  myMain.parentNode.insertBefore(document.getElementsByTagName("nav"),myMain.nextElementSibling);
-  //
-  //}, false);
-
-  var choiceCount= 3;
-  $(document).on('input','.choicesItem', function(){
-    if(!$(this).closest('tr').next().length){
-      $(this).closest('tr').after(`<tr><th><label for="choicesItem${choiceCount}">選択肢${choiceCount}</label> </th><td><input type="text" id="choicesItem${choiceCount}" class="choicesItem"></td></tr>`);
+  let choiceCount= $(".choicesItem").length + 1;
+  $(document).on('input','.choicesItemInput', function(){
+    if(!$(this).closest('.choicesItem').next('.choicesItem').length){
+      $(this).closest('.choicesItem').after(`<li class="choicesItem"><label for="choicesItem${choiceCount}">選択肢${choiceCount}</label><input type="text" id="choicesItem${choiceCount}" class="choicesItemInput"></li>`);
       choiceCount++;
     }
     let joinText = "";
-    $(".choicesItem").each(function () {
+    $(".choicesItemInput").each(function () {
       if ($(this).val()) {
         joinText += $(this).val() + ' |||| ';
         $("#testIto").text(joinText);
@@ -29,7 +16,15 @@ window.onload = function () {
     })
   });
 
-
+  //$("#pollLimit").on("change", function(){
+  //  let val =  $(this).val();
+  //  if(val == "15分"){
+  //    $("#poll_limit").val("15.minutes.since");
+  //  }else if(val == "30分"){
+  //    $("#poll_limit").val("30.minutes.since");
+  //  }
+  //  }
+  //);
 
 
 

@@ -1,6 +1,7 @@
            Prefix Verb     URI Pattern                       Controller#Action
              root GET      /                                 polls#index
      search_polls GET      /polls/search(.:format)           polls#search
+    confirm_polls POST     /polls/confirm(.:format)          polls#confirm
      poll_answers POST     /polls/:poll_id/answers(.:format) answers#create
 ajax_action_polls GET      /polls/ajax_action(.:format)      polls#ajax_action
             polls GET      /polls(.:format)                  polls#index
@@ -13,4 +14,4 @@ ajax_action_polls GET      /polls/ajax_action(.:format)      polls#ajax_action
                   DELETE   /polls/:id(.:format)              polls#destroy
            result GET      /results/:id(.:format)            polls#result
         websocket GET|POST /websocket(.:format)              websocket_rails
-Running via Spring preloader in process 72450
+Running via Spring preloader in process 3485

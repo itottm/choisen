@@ -1,47 +1,40 @@
-<% @page_title = '質問新規登録' %>
+<% @page_title = '登録内容確認' %>
 
 <h1><%= @page_title %></h1>
 
-<%= form_for @poll, url:{action: 'confirm'} do |form| %>
-  <%#= render 'form', form: form %>
+<%= form_for @poll do |form| %>
   <table class="tbl_poll">
     <tr>
-      <th><%= form.label :title, '質問タイトル' %></th>
-      <td><%= form.text_field :title %></td>
-    </tr>
-    <tr>
-      <th><%= form.label :question, '質問詳細' %></th>
-      <td><%= form.text_field :question %></td>
-    </tr>
-    <tr>
-      <th><label for="choicesItem1">選択肢1</label></th>
-      <td><input type="text" id="choicesItem1" class="choicesItem"></td>
-    </tr>
-    <tr>
-      <th><label for="choicesItem2">選択肢2</label></th>
-      <td><input type="text" id="choicesItem2" class="choicesItem"></td>
-    </tr>
-    <tr>
-      <th><label for="pollLimit">期限</label></th>
+      <th>質問タイトル</th>
       <td>
-        <select id="pollLimit" name="pollLimit">
-          <option>15分</option>
-          <option>30分</option>
-          <option>1時間</option>
-          <option>3時間</option>
-          <option>6時間</option>
-          <option>12時間</option>
-          <option>24時間</option>
-        </select>
+        <%= @poll.title %>
+        <%= form.hidden_field :title %>
       </td>
     </tr>
     <tr>
-      <th><%#= form.label :limit, '期限' %></th>
-      <td><%#= form.select :limit, options_for_select(%w(15分 30分 1時間 3時間 6時間 12時間 24時間)) %></td>
+      <th>質問詳細</th>
+      <td>
+        <%= @poll.question %>
+        <%= form.hidden_field :question %>
+      </td>
+    </tr>
+    <tr>
+      <th>選択肢</th>
+      <td>
+        <%= @poll.choices %>
+        <%= form.hidden_field :choices %>
+      </td>
+    </tr>
+    <tr>
+      <th>期限</th>
+      <td>
+        <%= @poll.limit %>
+        <%= form.hidden_field :limit %>
+        <%= debug @poll %>
+      </td>
     </tr>
   </table>
-  <%= form.hidden_field :choices , id: 'choices_text' %>
-  <%= form.hidden_field :limit , id: 'poll_limit', :value => :poll_limit %>
-  <p><%= form.submit %></p>
+  <p><%= form.submit '前の画面に戻る', name: 'back' %></p>
+  <p><%= form.submit '作成！' %></p>
 <% end %>
 

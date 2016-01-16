@@ -1,10 +1,35 @@
-<% @page_title = '編集' %>
+<%
+  @page_title = @poll.title
+  choices_array = @poll.choices.split(' |||| ')
+  choice_num = 1
+%>
 
 <h1><%= @page_title %></h1>
 
 <p><%= link_to "前の画面に戻る", @poll %></p>
 
 <%= form_for @poll do |form| %>
-  <%= render "form", form: form %>
-  <p><%= form.submit %></p>
+  <ul class="listPoll">
+    <li>
+      <%= form.label :title, '質問タイトル' %>
+      <%= form.text_field :title %>
+    </li>
+    <li>
+      <%= form.label :question, '質問詳細' %>
+      <%= form.text_field :question %>
+    </li>
+    <% choices_array.each do |value| %>
+    <li class="choicesItem">
+      <label for="choicesItem<%= choice_num %>">選択肢<%= choice_num %></label>
+      <input type="text" id="choicesItem<%= choice_num %>" class="choicesItemInput" value="<%= value %>">
+    </li>
+      <% choice_num = choice_num + 1 %>
+    <% end %>
+    <li>
+      <%= form.label :limit, '期限' %>
+      <%= form.select :limit, options_for_select(%w(15分 30分 1時間 3時間 6時間 12時間 24時間)) %>
+    </li>
+  </ul>
+  <%= form.hidden_field :choices , id: 'choices_text' %>
+  <p><%= form.submit '変更する' %></p>
 <% end %>
