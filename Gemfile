@@ -33,9 +33,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'seed-fu', '~> 2.3'
 gem 'websocket-rails'
 
+gem 'font-awesome-rails'
 
 gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'
+
+gem 'kaminari'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record
