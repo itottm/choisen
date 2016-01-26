@@ -1,34 +1,22 @@
 window.onload = function () {
 
-  let choiceCount= $(".choicesItem").length + 1;
-  $(document).on('input','.choicesItemInput', function(){
-    if(!$(this).closest('.choicesItem').next('.choicesItem').length){
-      $(this).closest('.choicesItem').after(`<li class="choicesItem"><label for="choicesItem${choiceCount}">選択肢${choiceCount}</label><input type="text" id="choicesItem${choiceCount}" class="choicesItemInput"></li>`);
-      choiceCount++;
-    }
-    let joinText = "";
-    $(".choicesItemInput").each(function () {
-      if ($(this).val()) {
-        joinText += $(this).val() + ' |||| ';
-        $("#testIto").text(joinText);
-        $("#choices_text").val(joinText);
+  //input欄自動追加
+  let $choicesItem = document.getElementsByClassName('choicesItem'),
+      choiceCount = $choicesItem.length + 1;
+
+  function addInput(event) {
+    let target = event.target.parentNode;
+    if (target.className === 'choicesItem') {
+      if (!target.nextElementSibling.classList.contains('choicesItem')) {
+        var newList = document.createElement('li');
+        newList.className = 'choicesItem';
+        newList.innerHTML = `<label for='choicesItem${choiceCount}'>選択肢${choiceCount}</label><input type='text' id='choicesItem${choiceCount}' class='choicesItemInput'>`;
+        target.parentNode.insertBefore(newList, target.nextElementSibling);
+        choiceCount++;
       }
-    })
-  });
+    }
+  }
 
-  //$("#pollLimit").on("change", function(){
-  //  let val =  $(this).val();
-  //  if(val == "15分"){
-  //    $("#poll_limit").val("15.minutes.since");
-  //  }else if(val == "30分"){
-  //    $("#poll_limit").val("30.minutes.since");
-  //  }
-  //  }
-  //);
+  document.addEventListener('input', addInput, false);
 
-
-
-  //
-  //document.querySelectorAll('input').style.backgroundColor('#f00');
-  //document.querySelector("main").style.color = "#0f0";
 };

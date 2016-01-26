@@ -1,0 +1,11 @@
+ <% @polls.each do |poll| %>
+      <li>
+        <article>
+          <%= link_to poll do %>
+            <h2 class="hdg-01"><%= fa_icon 'question 2x' %> <%= poll.title %></h2>
+            <p><%= poll.question %></p>
+          <% end %>
+          <%#= link_to '削除', poll, method: :delete, data: {confirm: '本当に削除しますか？'} %>
+        </article>
+      </li>
+    <% end %>

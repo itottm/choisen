@@ -1,47 +1,82 @@
-<% @page_title = '質問一覧' %>
+<%
+  @page_title = '質問一覧'
+  @move_header = true
+%>
 
 <h1><%= @page_title %></h1>
 
 <%= form_tag :search_polls, method: :get do %>
   <p>
-    <%= text_field_tag "q", params[:q] %>
-    <%= submit_tag "検索" %>
+    <%= text_field_tag 'q', params[:q] %>
+    <%= submit_tag '検索' %>
   </p>
 <% end %>
 
 <p><%= link_to 'あたらしく質問する', :new_poll %></p>
 
+<%= paginate @polls, :remote => true %>
+
 <% if @polls.present? %>
-  <% @polls.each do |poll| %>
-    <p>
-      <%= link_to poll do %>
-      質問タイトル：<%= poll.title %><br>
-      質問内容：<%= poll.question %>
-      <% end %>
-    </p>
-    <%= link_to '削除', poll, method: :delete,
-                data: {confirm: '本当に削除しますか？'} %>
-  <% end %>
+  <ul class="list-polls" id="listPolls">
+    <%= render :partial => 'list_polls' %>
+  </ul>
 <% else %>
   <p>現在質問がありません。</p>
 <% end %>
 
 
+<%= paginate @polls, :remote => true %>
+
 <p id="time"><%= @time %></p>
-<script type="text/javascript" charset="utf-8">
-//  var update;
+
+<script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script type="text/javascript">
+  window.addEventListener('load', init);
+  function init() {
+    var stage = new createjs.Stage('logoCanvas');
+    stage.enableMouseOver();
+
+    var MAX = 8;
+    for (var i = 0; i < MAX; i++) {
+      var rect00 = new createjs.Shape();
+      stage.addChild(rect00);
+      var bar_width = 40;
+      var hue = i * (360 / MAX);
+      var color = 'hsl(' + hue + ', 100%, 60%)';
+      var x = i * bar_width;
+
+      rect00.graphics.clear().beginFill(color).drawRect(0, 0, bar_width, 300);
+      rect00.x = x;
+      rect00.y = 100;
+      rect00.alpha = 0.7;
+      createjs.Tween.get(rect00, {loop: true})
+          .wait(i * 300)
+          .to({y: 75}, 1000, createjs.Ease.getPowInOut(2.2))
+          .to({alpha: 0, y: 100}, 1200, createjs.Ease.getPowInOut(2));
+      stage.addChild(rect00);
+    }
+
+    stage.update();
+
+    createjs.Ticker.setFPS(24);
+    createjs.Ticker.addEventListener('tick', stage);
+  }
+
+
 //
-//  $(function() {
-//    var timer;
-//    return timer = setInterval(function() {
-//      return update();
-//    }, 5000);
-//  });
+//    var update;
 //
-//  update = function() {
-//    $.ajax({
-//      url: 'polls/ajax_action',
-//      type: 'GET'
+//    $(function() {
+//      var timer;
+//      return timer = setInterval(function() {
+//        return update();
+//      }, 5000);
 //    });
-//  };
+//
+//    update = function() {
+//      $.ajax({
+//        url: 'polls/ajax_action',
+//        type: 'GET'
+//      });
+//    };
 </script>

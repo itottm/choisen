@@ -1,1 +1,6 @@
-<h1 class="hdg"><%= link_to 'ちょい選', '/'  %></h1>
+<% if move_header %>
+  <canvas height="100" width="320" id="logoCanvas"></canvas>
+  <h1 class="hdg"><%= link_to 'ちょい選', '/'  %></h1>
+<% else %>
+  <h1 class="hdg"><%= link_to 'ちょい選', '/'  %></h1>
+<% end %>

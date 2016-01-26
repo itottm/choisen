@@ -8,16 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller_name -%> <%= action_name -%>">
-<header>
+<header class="str-header">
 <%=	render 'shared/header' %>
 </header>
-<main>
+<main class="str-main">
 <% if flash.notice %>
 <p class="notice"><%= flash.notice %></p>
 <% end %>
 <%= yield %>
 </main>
-<footer>
+<footer class="str-footer">
 <%=	render 'shared/footer' %>
 </footer>
 </body>

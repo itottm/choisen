@@ -62,7 +62,7 @@ end
 Answer.seed do |s|
   s.id = 11
   s.poll_id = 2
-  s.answer_num = 2
+  s.answer_num = 1
   s.user_id = 11
 end
 Answer.seed do |s|
@@ -74,6 +74,108 @@ end
 Answer.seed do |s|
   s.id = 13
   s.poll_id = 2
-  s.answer_num = 2
+  s.answer_num = 1
   s.user_id = 13
+end
+Answer.seed do |s|
+  s.id = 14
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 14
+end
+Answer.seed do |s|
+  s.id = 15
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 15
+end
+Answer.seed do |s|
+  s.id = 16
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 16
+end
+Answer.seed do |s|
+  s.id = 17
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 17
+end
+Answer.seed do |s|
+  s.id = 18
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 18
+end
+Answer.seed do |s|
+  s.id = 19
+  s.poll_id = 1
+  s.answer_num = 4
+  s.user_id = 19
+end
+Answer.seed do |s|
+  s.id = 20
+  s.poll_id = 1
+  s.answer_num = 1
+  s.user_id = 20
+end
+Answer.seed do |s|
+  s.id = 21
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 21
+end
+Answer.seed do |s|
+  s.id = 22
+  s.poll_id = 2
+  s.answer_num = 2
+  s.user_id = 22
+end
+Answer.seed do |s|
+  s.id = 23
+  s.poll_id = 1
+  s.answer_num = 1
+  s.user_id = 23
+end
+Answer.seed do |s|
+  s.id = 24
+  s.poll_id = 1
+  s.answer_num = 1
+  s.user_id = 24
+end
+Answer.seed do |s|
+  s.id = 25
+  s.poll_id = 1
+  s.answer_num = 3
+  s.user_id = 25
+end
+Answer.seed do |s|
+  s.id = 26
+  s.poll_id = 1
+  s.answer_num = 4
+  s.user_id = 26
+end
+Answer.seed do |s|
+  s.id = 27
+  s.poll_id = 1
+  s.answer_num = 4
+  s.user_id = 27
+end
+Answer.seed do |s|
+  s.id = 28
+  s.poll_id = 1
+  s.answer_num = 4
+  s.user_id = 28
+end
+Answer.seed do |s|
+  s.id = 29
+  s.poll_id = 3
+  s.answer_num = 2
+  s.user_id = 29
+end
+Answer.seed do |s|
+  s.id = 30
+  s.poll_id = 3
+  s.answer_num = 1
+  s.user_id = 30
 end

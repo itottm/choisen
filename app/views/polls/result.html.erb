@@ -1,16 +1,47 @@
 <%
   @page_title = @poll.title
   choices_array = @poll.choices.split(' |||| ')
-  limit_time = @poll.limit
-  current_time = Time.current
+  limit_time = Time.parse(@poll.limit).to_i
 %>
 
-<% if limit_time > current_time %>
-    <%= '投票受付中' %>
-<% else %>
-    <%= '投票締め切りました' %>
-<% end %>
 <h1><%= @page_title %></h1>
+
+
+<p id="RealtimeCountdownArea"></p>
+<script>
+  function showCountdown() {
+    var nowDate = new Date();
+    var currentTime = parseInt(nowDate.getTime());
+    var limitTime = <%= limit_time * 1000 %>;
+    var diff2Dates = limitTime - currentTime;
+
+    var dDays = diff2Dates / ( 1000 * 60 * 60 * 24 ); // 日数
+    diff2Dates = diff2Dates % ( 1000 * 60 * 60 * 24 );
+    var dHour = diff2Dates / ( 1000 * 60 * 60 ); // 時間
+    diff2Dates = diff2Dates % ( 1000 * 60 * 60 );
+    var dMin = diff2Dates / ( 1000 * 60 ); // 分
+    diff2Dates = diff2Dates % ( 1000 * 60 );
+    var dSec = diff2Dates / 1000; // 秒
+    console.log(dSec);
+    var msg1 = "";
+    var msg2 = Math.floor(dDays) + "日" + Math.floor(dHour) + "時間" + Math.floor(dMin) + "分" + Math.floor(dSec) + "秒";
+
+    var msg;
+    if (limitTime > currentTime) {
+      // まだ期限が来ていない場合
+      msg = msg1 + "までは、あと" + msg2 + "です。";
+    }
+    else {
+      // 期限が過ぎた場合
+      msg = msg1 + "は、既に" + msg2 + "前に過ぎました。";
+    }
+    document.getElementById("RealtimeCountdownArea").innerHTML = msg;
+  }
+
+  setInterval('showCountdown()', 1000);
+
+</script>
+
 
 <div id="chart">
   <canvas id="myChart" width="400" height="200"></canvas>
@@ -127,14 +158,14 @@
   var ws_rails = new WebSocketRails("localhost:3001/websocket");
   var websocket_chat_channel = ws_rails.subscribe("websocket_chat_channel");
 
-  websocket_chat_channel.bind("websocket_chat", function(message){
+  websocket_chat_channel.bind("websocket_chat", function (message) {
     var message_li = document.createElement("li");
     message_li.textContent = message;
 
     document.getElementById("chat_area").appendChild(message_li);
   });
 
-  document.getElementById("send").onclick = function(){
+  document.getElementById("send").onclick = function () {
     var comment = document.getElementById("comment").value;
 
     // この一行を変更
@@ -144,19 +175,19 @@
 </script>
 <p id="time"><%= @time %></p>
 <script type="text/javascript" charset="utf-8">
-/*  var update;
+  /*  var update;
 
-  $(function() {
-    var timer;
-    return timer = setInterval(function() {
-      return update();
-    }, 5000);
-  });
+   $(function() {
+   var timer;
+   return timer = setInterval(function() {
+   return update();
+   }, 5000);
+   });
 
-  update = function() {
-    $.ajax({
-      url: 'polls/ajax_action',
-      type: 'GET'
-    });
-  };*/
+   update = function() {
+   $.ajax({
+   url: 'polls/ajax_action',
+   type: 'GET'
+   });
+   };*/
 </script>
