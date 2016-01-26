@@ -16,7 +16,7 @@ class PollsController < ApplicationController
   end
 
   def result
-    @answers = Answer.where(poll_id: params[:id]).group(:answer_num).count()
+    @answers = Answer.where(poll_id: params[:id]).order(answer_num: :asc).group(:answer_num).count()
     @time = Time.now()
   end
 
