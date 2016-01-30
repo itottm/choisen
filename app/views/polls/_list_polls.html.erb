@@ -1,9 +1,37 @@
- <% @polls.each do |poll| %>
+ <% polls.each do |poll| %>
       <li>
         <article>
+          <%
+             limit_time = Time.parse(poll.limit).to_i
+             diff_to_dates = (limit_time * 1000) - (@current_date * 1000)
+
+             diff_to_dates = diff_to_dates % ( 1000 * 60 * 60 * 24 )
+             d_hour = diff_to_dates / ( 1000 * 60 * 60 ) # 時間
+             diff_to_dates = diff_to_dates % ( 1000 * 60 * 60 )
+             d_min = diff_to_dates / ( 1000 * 60 ) # 分
+             msg = "#{d_hour}時間#{d_min}分"
+          %>
+
           <%= link_to poll do %>
-            <h2 class="hdg-01"><%= fa_icon 'question 2x' %> <%= poll.title %></h2>
-            <p><%= poll.question %></p>
+            <div class="poll-main-container">
+              <h2 class="hdg-01"><%= fa_icon 'question 2x' %> <%= poll.title %></h2>
+              <p><%= poll.question %></p>
+            </div>
+            <div class="poll-info-container">
+              <p class="host-info">
+                北海道 10代前半 男性
+              </p>
+              <p class="time-info">
+                <% if limit_time > @current_date  %>
+                  <span class="text">終了まであと</span>
+                  <span class="time"><%= msg %></span>
+                <% else %>
+                  <span class="text">投票受付終了</span>
+                  <span class="time"><%= Time.parse(poll.limit).strftime('%-m/%d %H:%M') %></span>
+                <% end %>
+
+              </p>
+            </div>
           <% end %>
           <%#= link_to '削除', poll, method: :delete, data: {confirm: '本当に削除しますか？'} %>
         </article>

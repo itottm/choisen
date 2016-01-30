@@ -67,21 +67,62 @@ ul{
 .list-polls{
   > li{
     box-sizing:border-box;
-    border-radius:5px;
-    border:1px solid #eee;
+    box-shadow:0 0 2px 1px rgba(0,0,0,0.1);
+    border-radius:3px;
     margin-bottom:2%;
     background:#fff;
+    position:relative;
     a{
       display:block;
-      height:180px;
-      padding:10px;
     }
   }
   .hdg-01{
-    font-size:1.6rem;
+    font-size:1.4rem;
     border-bottom:1px solid #ccc;
+    margin:0 0 10px;
   }
-
+  .poll-main-container{
+    height:105px;
+    padding:10px;
+    p{
+      margin:0;
+    }
+  }
+  .poll-info-container{
+    width:100%;
+    height:45px;
+    background-color:#00bc8d;
+    border-radius:0 0 3px 3px;
+    display:table;
+    color:#fff;
+    p{
+      margin:0;
+    }
+    .host-info,
+    .time-info{
+      font-size:1.2rem;
+      display:table-cell;
+      padding:5px 10px;
+      vertical-align:middle;
+      box-sizing:border-box;
+    }
+    .host-info{
+      width:60%;
+      text-align:center;
+    }
+    .time-info{
+      width:40%;
+      border-left:1px solid #fff;
+      line-height:1.4;
+      .text{
+        font-size:1rem;
+      }
+      .time{
+        display:block;
+        text-align:center;
+      }
+    }
+  }
 }
 
 .notice{
@@ -90,22 +131,46 @@ ul{
   background-color:#ccf;
 }
 
-@media screen and (min-width: 960px){
+@media screen and (min-width: 1101px){
   .str-main{
-    width:950px;
+    width:1080px;
     margin-right:auto;
     margin-left:auto;
   }
+  .list-polls{
+    overflow:visible;
+    margin-left:-1%;
+    > li{
+      float:left;
+      width:24%;
+      margin-left:1%;
+    }
+  }
 }
 
-@media screen and (min-width: 600px){
+@media (min-width: 768px) and (max-width: 1100px){
   .list-polls{
-    overflow:hidden;
+    overflow:visible;
     margin-left:-1.33%;
     > li{
       float:left;
       width:32%;
-      margin-right:1.33%;
+      margin-left:1.33%;
     }
   }
+}
+
+@media (min-width: 481px) and (max-width: 767px){
+  .list-polls{
+    overflow:visible;
+    margin-left:-1.5%;
+    > li{
+      float:left;
+      width:48.5%;
+      margin-left:1.5%;
+    }
+  }
+}
+@media screen and (max-width: 480px){
+
 }

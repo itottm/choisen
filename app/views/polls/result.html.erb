@@ -1,51 +1,24 @@
 <%
   @page_title = @poll.title
   choices_array = @poll.choices.split(' |||| ')
+  current_date = Time.current.to_i
   limit_time = Time.parse(@poll.limit).to_i
 %>
+<script>
+  var currentTime = <%= current_date * 1000 %>,
+      limitTime = <%= limit_time * 1000 %>
+</script>
 
 <h1><%= @page_title %></h1>
 
-
+<!-- 残り時間表示 -->
 <p id="RealtimeCountdownArea"></p>
-<script>
-  function showCountdown() {
-    var nowDate = new Date();
-    var currentTime = parseInt(nowDate.getTime());
-    var limitTime = <%= limit_time * 1000 %>;
-    var diff2Dates = limitTime - currentTime;
 
-    var dDays = diff2Dates / ( 1000 * 60 * 60 * 24 ); // 日数
-    diff2Dates = diff2Dates % ( 1000 * 60 * 60 * 24 );
-    var dHour = diff2Dates / ( 1000 * 60 * 60 ); // 時間
-    diff2Dates = diff2Dates % ( 1000 * 60 * 60 );
-    var dMin = diff2Dates / ( 1000 * 60 ); // 分
-    diff2Dates = diff2Dates % ( 1000 * 60 );
-    var dSec = diff2Dates / 1000; // 秒
-    console.log(dSec);
-    var msg1 = "";
-    var msg2 = Math.floor(dDays) + "日" + Math.floor(dHour) + "時間" + Math.floor(dMin) + "分" + Math.floor(dSec) + "秒";
-
-    var msg;
-    if (limitTime > currentTime) {
-      // まだ期限が来ていない場合
-      msg = msg1 + "までは、あと" + msg2 + "です。";
-    }
-    else {
-      // 期限が過ぎた場合
-      msg = msg1 + "は、既に" + msg2 + "前に過ぎました。";
-    }
-    document.getElementById("RealtimeCountdownArea").innerHTML = msg;
-  }
-
-  setInterval('showCountdown()', 1000);
-
-</script>
-
-
+<!-- グラフ表示 -->
 <div id="chart">
   <canvas id="myChart" width="400" height="200"></canvas>
 </div>
+
 
 <table>
   <tr>
@@ -124,10 +97,6 @@
     //Number - Spacing between data sets within X values
     barDatasetSpacing: 1
   });
-
-  console.log(keyArray);
-  console.log(valueArray);
-
 </script>
 
 <% @answers.each do |key, value| %>
@@ -150,6 +119,34 @@
 <input id="comment" type="text">
 
 <input id="send" type="button" value="send">
+
+<script>
+  function showCountdown() {
+    var diff2Dates = limitTime - currentTime;
+
+    diff2Dates = diff2Dates % ( 1000 * 60 * 60 * 24 );
+    var dHour = diff2Dates / ( 1000 * 60 * 60 ); // 時間
+    diff2Dates = diff2Dates % ( 1000 * 60 * 60 );
+    var dMin = diff2Dates / ( 1000 * 60 ); // 分
+    diff2Dates = diff2Dates % ( 1000 * 60 );
+    var dSec = diff2Dates / 1000; // 秒
+    var msg = Math.floor(dHour) + "時間" + Math.floor(dMin) + "分" + Math.floor(dSec) + "秒";
+
+    if (limitTime > currentTime) {
+      // まだ期限が来ていない場合
+      msg = "投票終了まで、あと" + msg + "です。";
+//      clearInterval(showCountdown());
+      document.getElementById("RealtimeCountdownArea").innerHTML = msg;
+    }
+    else {
+      msg = "投票は締め切りました";
+      document.getElementById("RealtimeCountdownArea").innerHTML = msg;
+      clearInterval(showCountdown(timerId));
+    }
+    currentTime += 1000;
+  }
+  var timerId = setInterval('showCountdown()', 1000);
+</script>
 
 
 

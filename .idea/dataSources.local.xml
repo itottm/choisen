@@ -5,5 +5,11 @@
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
+    <data-source name="Rails choisen: test" uuid="1b9afe7f-7429-4e5d-9b0e-2b304ffcdbe9">
+      <auth-required>false</auth-required>
+    </data-source>
+    <data-source name="Rails choisen: development" uuid="fa6e9e26-5428-4caf-a456-1660c78d8201">
+      <auth-required>false</auth-required>
+    </data-source>
   </component>
 </project>

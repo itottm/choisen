@@ -2,8 +2,7 @@ class PollsController < ApplicationController
   before_action :set_note,only:[:show,:result,:edit,:update,:destroy]
 
   def index
-    # @polls = Poll.order('id').page(1).per(5)
-    @polls = Poll.page(params[:page]).per(9).order('id desc')
+    @polls = Poll.page(params[:page]).per(12).order('id desc')
     respond_to do |format|
       format.html
       format.js
