@@ -44,9 +44,10 @@ ul{
   margin:0 auto;
 }
 
-#chart {
-  position: relative;
-  width: 400px;
+#chartArea {
+  width:100%;
+  height:300px;
+  font-size:10rem;
 }
 
 .list-input-poll{

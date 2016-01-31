@@ -15,10 +15,7 @@
 <p id="RealtimeCountdownArea"></p>
 
 <!-- グラフ表示 -->
-<div id="chart">
-  <canvas id="myChart" width="400" height="200"></canvas>
-</div>
-
+<div id="chartArea"></div>
 
 <table>
   <tr>
@@ -40,77 +37,6 @@
     </td>
   </tr>
 </table>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
-<script type="text/javascript">
-  var keyArray = [];
-  var valueArray = [];
-
-  <% @answers.each do |key,value| %>
-  keyArray.push('<%= key %>');
-  valueArray.push('<%= value %>');
-  <% end %>
-
-  var data = {
-    labels: keyArray,
-    datasets: [
-      {
-        label: "My First dataset",
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data: valueArray
-      }
-    ]
-  };
-
-  var ctx = document.getElementById("myChart").getContext("2d");
-  new Chart(ctx).Bar(data, {
-    scaleBeginAtZero: true,
-
-    //Boolean - Whether grid lines are shown across the chart
-    scaleShowGridLines: true,
-
-    //String - Colour of the grid lines
-    scaleGridLineColor: "rgba(0,0,0,.05)",
-
-    //Number - Width of the grid lines
-    scaleGridLineWidth: 1,
-
-    //Boolean - Whether to show horizontal lines (except X axis)
-    scaleShowHorizontalLines: true,
-
-    //Boolean - Whether to show vertical lines (except Y axis)
-    scaleShowVerticalLines: true,
-
-    //Boolean - If there is a stroke on each bar
-    barShowStroke: true,
-
-    //Number - Pixel width of the bar stroke
-    barStrokeWidth: 2,
-
-    //Number - Spacing between each of the X value sets
-    barValueSpacing: 5,
-
-    //Number - Spacing between data sets within X values
-    barDatasetSpacing: 1
-  });
-</script>
-
-<% @answers.each do |key, value| %>
-  <p>
-    <%= key %> →
-    <%= value %>
-  </p>
-<% end %>
-
-<!-- チャット表示部分 -->
-
-<ul id="chat_area">
-
-</ul>
 
 
 
@@ -170,7 +96,6 @@
     websocket_chat_channel.trigger("websocket_chat", comment);
   }
 </script>
-<p id="time"><%= @time %></p>
 <script type="text/javascript" charset="utf-8">
   /*  var update;
 
@@ -187,4 +112,61 @@
    type: 'GET'
    });
    };*/
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.13.0/amcharts.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.13.0/serial.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.13.0/themes/light.js"></script>
+<script type="text/javascript">
+  var answerData = [];
+
+  <%
+  i = 0
+  choices_length = @answers.length
+
+  @answers.each do |key,value|
+
+  hue = i * (360 / choices_length)
+  color = "hsl(#{hue}, 100%, 60%)"
+  %>
+  answerData.push({
+    "choices": "<%= key %>",
+    "answer": <%= value %>,
+    "color": "<%= color %>"
+  });
+  <% i = i + 1
+  end %>
+
+  var chart = AmCharts.makeChart("chartArea", {
+    "type": "serial",
+    "theme": "light",
+    "marginRight": 10,
+    "dataProvider": answerData,
+    "startDuration": 1,
+    "valueAxes": [{
+      "precision": false
+    }],
+    "graphs": [{
+      "balloonText": "<b>[[category]]: [[value]]</b>",
+      "fillColorsField": "color",
+      "fillAlphas": 0.9,
+      "lineAlpha": 0.2,
+      "type": "column",
+      "valueField": "answer"
+    }],
+    "chartCursor": {
+      "categoryBalloonEnabled": false,
+      "cursorAlpha": 0,
+      "zoomable": false
+    },
+    "categoryField": "choices",
+    "categoryAxis": {
+      "gridPosition": "start",
+      "labelRotation": 45
+    },
+    "export": {
+      "enabled": false
+    }
+
+  });
 </script>
