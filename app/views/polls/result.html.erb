@@ -1,8 +1,8 @@
 <%
-  @page_title = @poll.title
-  choices_array = @poll.choices.split(' |||| ')
-  current_date = Time.current.to_i
-  limit_time = Time.parse(@poll.limit).to_i
+   @page_title = @poll.title
+   choices_array = @poll.choices.split(' |||| ')
+   current_date = Time.current.to_i
+   limit_time = Time.parse(@poll.limit).to_i
 %>
 <script>
   var currentTime = <%= current_date * 1000 %>,
@@ -10,6 +10,9 @@
 </script>
 
 <h1><%= @page_title %></h1>
+<h1><%= @user.gender %></h1>
+<h1><%= @user.age %></h1>
+<h1><%= @user.area %></h1>
 
 <!-- 残り時間表示 -->
 <p id="RealtimeCountdownArea"></p>

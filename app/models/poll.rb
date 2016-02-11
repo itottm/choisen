@@ -1,5 +1,6 @@
 class Poll < ActiveRecord::Base
   has_many :answers
+  belongs_to :user
 
   class << self
     def search(query)

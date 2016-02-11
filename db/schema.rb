@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231002539) do
+ActiveRecord::Schema.define(version: 20160208163140) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "poll_id"
@@ -28,18 +28,27 @@ ActiveRecord::Schema.define(version: 20151231002539) do
     t.text     "image"
     t.text     "limit",                  null: false
     t.integer  "limit_flg",  default: 1
+    t.integer  "user_id",    default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "gender"
-    t.date     "birthday"
-    t.integer  "age"
-    t.integer  "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "username"
+    t.string   "gender"
+    t.string   "area"
+    t.string   "age"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.boolean  "guest",                  default: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

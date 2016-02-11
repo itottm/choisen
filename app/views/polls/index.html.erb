@@ -17,6 +17,10 @@
 
 <%= paginate @polls, :remote => true %>
 
+
+<%= @users %>
+
+
 <% if @polls.present? %>
   <ul class="list-polls" id="listPolls">
     <%= render :partial => 'list_polls', locals: { polls: @polls } %>

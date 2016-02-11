@@ -1,1 +1,109 @@
 フッター
+
+<form id="form">
+  <label><input type="radio" name="gender" value="男性">男性</label>
+  <label><input type="radio" name="gender" value="女性">女性</label>
+  <select name="age" id="age">
+    <option value="10才未満">10才未満</option>
+    <option value="10-14才">10-14才</option>
+    <option value="15-19才">15-19才</option>
+    <option value="20-24才">20-24才</option>
+    <option value="25-29才">25-29才</option>
+    <option value="30-34才">30-34才</option>
+    <option value="35-39才">35-39才</option>
+    <option value="40-44才">40-44才</option>
+    <option value="45-49才">45-49才</option>
+    <option value="50-54才">50-54才</option>
+    <option value="55-59才">55-59才</option>
+    <option value="60-64才">60-64才</option>
+    <option value="65-69才">65-69才</option>
+    <option value="70-74才">70-74才</option>
+    <option value="75-79才">75-79才</option>
+    <option value="80-84才">80-84才</option>
+    <option value="85-89才">85-89才</option>
+    <option value="90-94才">90-94才</option>
+    <option value="95-99才">95-99才</option>
+    <option value="100才以上">100才以上</option>
+  </select>
+  <select name="area" id="area">
+    <option value="" selected>都道府県
+    <option value="北海道">北海道
+    <option value="青森県">青森県
+    <option value="岩手県">岩手県
+    <option value="宮城県">宮城県
+    <option value="秋田県">秋田県
+    <option value="山形県">山形県
+    <option value="福島県">福島県
+    <option value="茨城県">茨城県
+    <option value="栃木県">栃木県
+    <option value="群馬県">群馬県
+    <option value="埼玉県">埼玉県
+    <option value="千葉県">千葉県
+    <option value="東京都">東京都
+    <option value="神奈川県">神奈川県
+    <option value="新潟県">新潟県
+    <option value="富山県">富山県
+    <option value="石川県">石川県
+    <option value="福井県">福井県
+    <option value="山梨県">山梨県
+    <option value="長野県">長野県
+    <option value="岐阜県">岐阜県
+    <option value="静岡県">静岡県
+    <option value="愛知県">愛知県
+    <option value="三重県">三重県
+    <option value="滋賀県">滋賀県
+    <option value="京都府">京都府
+    <option value="大阪府">大阪府
+    <option value="兵庫県">兵庫県
+    <option value="奈良県">奈良県
+    <option value="和歌山県">和歌山県
+    <option value="鳥取県">鳥取県
+    <option value="島根県">島根県
+    <option value="岡山県">岡山県
+    <option value="広島県">広島県
+    <option value="山口県">山口県
+    <option value="徳島県">徳島県
+    <option value="香川県">香川県
+    <option value="愛媛県">愛媛県
+    <option value="高知県">高知県
+    <option value="福岡県">福岡県
+    <option value="佐賀県">佐賀県
+    <option value="長崎県">長崎県
+    <option value="熊本県">熊本県
+    <option value="大分県">大分県
+    <option value="宮崎県">宮崎県
+    <option value="鹿児島県">鹿児島県
+    <option value="沖縄県">沖縄県
+  </select>
+  <button id="submit">決定</button>
+</form>
+<p id="userInfo"></p>
+
+<script>
+  var btn = document.getElementById("submit"),
+      user = document.getElementById("userInfo"),
+      getGender = localStorage.getItem("gender"),
+      getAge = localStorage.getItem("age"),
+      getArea = localStorage.getItem("area");
+
+  function setUserInfo(){
+    var gender = document.getElementsByName("gender"),
+        age = document.getElementById("age").value,
+        area = document.getElementById("area").value;
+    for(var i=0; i<gender.length; i++){
+      if(gender[i].checked){
+        gender = gender[i].value;
+      }
+    }
+    console.log(gender);
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("age", age);
+    localStorage.setItem("area", area);
+
+    return false;
+  }
+  user.innerHTML = getArea + ' ' + getAge + ' ' + getGender;
+
+  btn.addEventListener('click', setUserInfo, false);
+
+</script>

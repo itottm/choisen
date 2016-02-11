@@ -33,7 +33,8 @@
       </td>
     </tr>
   </table>
-  <p><%= form.submit '前の画面に戻る', name: 'back' %></p>
+  <%= form.hidden_field :user_id , value: current_or_guest_user.id %>
   <p><%= form.submit '作成！' %></p>
+  <p><%= form.submit '前の画面に戻る', name: 'back' %></p>
 <% end %>
 

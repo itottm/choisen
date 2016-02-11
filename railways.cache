@@ -1,17 +1,31 @@
-           Prefix Verb     URI Pattern                       Controller#Action
-             root GET      /                                 polls#index
-     search_polls GET      /polls/search(.:format)           polls#search
-    confirm_polls POST     /polls/confirm(.:format)          polls#confirm
-     poll_answers POST     /polls/:poll_id/answers(.:format) answers#create
-ajax_action_polls GET      /polls/ajax_action(.:format)      polls#ajax_action
-            polls GET      /polls(.:format)                  polls#index
-                  POST     /polls(.:format)                  polls#create
-         new_poll GET      /polls/new(.:format)              polls#new
-        edit_poll GET      /polls/:id/edit(.:format)         polls#edit
-             poll GET      /polls/:id(.:format)              polls#show
-                  PATCH    /polls/:id(.:format)              polls#update
-                  PUT      /polls/:id(.:format)              polls#update
-                  DELETE   /polls/:id(.:format)              polls#destroy
-           result GET      /results/:id(.:format)            polls#result
-        websocket GET|POST /websocket(.:format)              websocket_rails
-Running via Spring preloader in process 3485
+                  Prefix Verb   URI Pattern                       Controller#Action
+        new_user_session GET    /users/sign_in(.:format)          devise/sessions#new
+            user_session POST   /users/sign_in(.:format)          devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)         devise/sessions#destroy
+           user_password POST   /users/password(.:format)         devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)     devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)    devise/passwords#edit
+                         PATCH  /users/password(.:format)         devise/passwords#update
+                         PUT    /users/password(.:format)         devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)           devise/registrations#cancel
+       user_registration POST   /users(.:format)                  devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)          devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)             devise/registrations#edit
+                         PATCH  /users(.:format)                  devise/registrations#update
+                         PUT    /users(.:format)                  devise/registrations#update
+                         DELETE /users(.:format)                  devise/registrations#destroy
+                    root GET    /                                 polls#index
+            search_polls GET    /polls/search(.:format)           polls#search
+           confirm_polls POST   /polls/confirm(.:format)          polls#confirm
+            poll_answers POST   /polls/:poll_id/answers(.:format) answers#create
+       ajax_action_polls GET    /polls/ajax_action(.:format)      polls#ajax_action
+                   polls GET    /polls(.:format)                  polls#index
+                         POST   /polls(.:format)                  polls#create
+                new_poll GET    /polls/new(.:format)              polls#new
+               edit_poll GET    /polls/:id/edit(.:format)         polls#edit
+                    poll GET    /polls/:id(.:format)              polls#show
+                         PATCH  /polls/:id(.:format)              polls#update
+                         PUT    /polls/:id(.:format)              polls#update
+                         DELETE /polls/:id(.:format)              polls#destroy
+                  result GET    /results/:id(.:format)            polls#result
+Running via Spring preloader in process 80164

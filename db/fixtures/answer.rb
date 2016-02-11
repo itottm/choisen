@@ -14,7 +14,7 @@ end
 Answer.seed do |s|
   s.id = 3
   s.poll_id = 2
-  s.answer_num = 2
+  s.answer_num = 1
   s.user_id = 2
 end
 Answer.seed do |s|
@@ -32,7 +32,7 @@ end
 Answer.seed do |s|
   s.id = 6
   s.poll_id = 2
-  s.answer_num = 2
+  s.answer_num = 1
   s.user_id = 6
 end
 Answer.seed do |s|
@@ -153,29 +153,29 @@ Answer.seed do |s|
   s.id = 26
   s.poll_id = 1
   s.answer_num = 4
-  s.user_id = 26
+  s.user_id = 21
 end
 Answer.seed do |s|
   s.id = 27
   s.poll_id = 1
   s.answer_num = 4
-  s.user_id = 27
+  s.user_id = 1
 end
 Answer.seed do |s|
   s.id = 28
   s.poll_id = 1
   s.answer_num = 4
-  s.user_id = 28
+  s.user_id = 23
 end
 Answer.seed do |s|
   s.id = 29
   s.poll_id = 3
   s.answer_num = 2
-  s.user_id = 29
+  s.user_id = 25
 end
 Answer.seed do |s|
   s.id = 30
   s.poll_id = 3
   s.answer_num = 1
-  s.user_id = 30
+  s.user_id = 20
 end

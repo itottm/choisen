@@ -39,6 +39,7 @@ gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'
 
 gem 'kaminari'
+gem 'devise'
 
 group :development, :test do
 # Use sqlite3 as the database for Active Record

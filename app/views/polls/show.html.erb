@@ -6,6 +6,9 @@
 %>
 
 <h1><%= @page_title %></h1>
+<%= @user.area %>
+<%= @user.age %>
+<%= @user.gender %>
 <%= form_for [@poll,@poll.answers.build] do |f| %>
 <ul class="list-show-poll">
   <li>
@@ -31,6 +34,7 @@
 </ul>
 <p><%= f.submit '投票する' %></p>
 <% end %>
+
 
 <p><%= link_to '編集する', [:edit, @poll] %></p>
 

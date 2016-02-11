@@ -99,6 +99,12 @@ ul{
     p{
       margin:0;
     }
+    &.is-soon{
+      background-color:#f99;
+    }
+    &.is-finished{
+      background-color:#999;
+    }
     .host-info,
     .time-info{
       font-size:1.2rem;

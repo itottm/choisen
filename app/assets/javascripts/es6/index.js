@@ -5,8 +5,9 @@ window.onload = function () {
 
   function addInput(event) {
     let $choicesItem = document.getElementsByClassName('choicesItem'),
-        choiceCount = $choicesItem.length + 1,
-        $target = event.target.parentNode;
+      choiceCount = $choicesItem.length + 1,
+      $target = event.target.parentNode,
+      joinText = "";
     if ($target.className === 'choicesItem') {
       if (!$target.nextElementSibling.classList.contains('choicesItem')) {
         var newList = document.createElement('li');
@@ -16,6 +17,12 @@ window.onload = function () {
         choiceCount++;
       }
     }
+    $(".choicesItemInput").each(function () {
+      if ($(this).val()) {
+        joinText += $(this).val() + ' |||| ';
+        $("#choices_text").val(joinText);
+      }
+    })
   }
 
   document.addEventListener('input', addInput, false);

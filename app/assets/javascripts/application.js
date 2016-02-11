@@ -14,5 +14,5 @@
 //= require jquery_ujs
 // require turbolinks
 //= require_directory .
-//= require websocket_rails/main
+// require websocket_rails/main
 

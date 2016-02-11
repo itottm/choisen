@@ -11,15 +11,22 @@
              d_min = diff_to_dates / ( 1000 * 60 ) # 分
              msg = "#{d_hour}時間#{d_min}分"
           %>
-
           <%= link_to poll do %>
             <div class="poll-main-container">
               <h2 class="hdg-01"><%= fa_icon 'question 2x' %> <%= poll.title %></h2>
               <p><%= poll.question %></p>
             </div>
-            <div class="poll-info-container">
+            <div class="poll-info-container
+            <% if limit_time < @current_date %>
+            is-finished
+              <% elsif (limit_time - @current_date) >= 0 && (limit_time - @current_date) <= 600 %>
+            is-soon
+            <% end %>
+            ">
               <p class="host-info">
-                北海道 10代前半 男性
+                <%= poll.user.area %>
+                <%= poll.user.age %>
+                <%= poll.user.gender %>
               </p>
               <p class="time-info">
                 <% if limit_time > @current_date  %>

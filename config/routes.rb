@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'polls#index'
 
   # get 'polls/index'
@@ -15,7 +16,8 @@ Rails.application.routes.draw do
 
   get '/results/:id' => 'polls#result',as:'result'
 
-
+  post 'users/guest' => 'users#guest'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
 
   # The priority is based upon order of creation: first created -> highest priority.

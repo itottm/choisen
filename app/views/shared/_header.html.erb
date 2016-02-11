@@ -4,3 +4,23 @@
 <% else %>
   <h1 class="hdg"><%= link_to 'ちょい選', '/'  %></h1>
 <% end %>
+
+<!--devise用-->
+<nav>
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_or_guest_user.username %>|<%= current_or_guest_user.id %></strong>.
+    <% if guest_user? %>
+      <%= link_to 'メンバーになる', new_user_registration_path %>
+    <% else %>
+      <%= link_to 'プロフィール変更', edit_user_registration_path %> |
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% end %>
+  <% else %>
+    <%= link_to 'ユーザー登録', new_user_registration_path %> |
+    <%= link_to 'ログイン', new_user_session_path %>
+  <% end %>
+</nav>
+<p class="alert"><%= alert %></p>
+
+<!--<p><%#= button_to '無料体験', users_guest_path %></p>-->
+<!--/ devise用-->

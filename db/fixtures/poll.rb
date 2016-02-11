@@ -4,6 +4,7 @@ Poll.seed do |s|
   s.question = '質問内容1 質問内容1 質問内容1 質問内容1 質問内容1 質問内容1 質問内容1'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 0
 end
 Poll.seed do |s|
   s.id = 2
@@ -12,6 +13,7 @@ Poll.seed do |s|
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| 選択肢その5 |||| 選択肢その6 |||| 選択肢その7 |||| 選択肢その8 |||| '
   s.limit = '2016-01-01 19:40:25 +0900'
   s.limit_flg = 0
+  s.user_id = 2
 end
 Poll.seed do |s|
   s.id = 3
@@ -19,6 +21,7 @@ Poll.seed do |s|
   s.question = '質問内容3 質問内容3 質問内容3 質問内容3 質問内容3 質問内容3 質問内容3'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 3
 end
 Poll.seed do |s|
   s.id = 4
@@ -26,6 +29,7 @@ Poll.seed do |s|
   s.question = '質問内容4 質問内容4 質問内容4 質問内容4 質問内容4 質問内容4 質問内容4'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 4
 end
 Poll.seed do |s|
   s.id = 5
@@ -33,6 +37,7 @@ Poll.seed do |s|
   s.question = '質問内容5 質問内容5 質問内容5 質問内容5 質問内容5 質問内容5 質問内容5'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 5
 end
 Poll.seed do |s|
   s.id = 6
@@ -40,6 +45,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 6
 end
 Poll.seed do |s|
   s.id = 7
@@ -47,6 +53,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 7
 end
 Poll.seed do |s|
   s.id = 8
@@ -54,6 +61,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 8
 end
 Poll.seed do |s|
   s.id = 9
@@ -61,6 +69,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 9
 end
 Poll.seed do |s|
   s.id = 10
@@ -68,6 +77,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 10
 end
 Poll.seed do |s|
   s.id = 11
@@ -75,6 +85,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 11
 end
 Poll.seed do |s|
   s.id = 12
@@ -82,6 +93,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 4
 end
 Poll.seed do |s|
   s.id = 13
@@ -89,6 +101,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 13
 end
 Poll.seed do |s|
   s.id = 14
@@ -96,6 +109,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 1
 end
 Poll.seed do |s|
   s.id = 15
@@ -103,6 +117,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 15
 end
 Poll.seed do |s|
   s.id = 16
@@ -110,6 +125,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 16
 end
 Poll.seed do |s|
   s.id = 17
@@ -117,6 +133,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 17
 end
 Poll.seed do |s|
   s.id = 18
@@ -124,6 +141,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 18
 end
 Poll.seed do |s|
   s.id = 19
@@ -131,6 +149,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 19
 end
 Poll.seed do |s|
   s.id = 20
@@ -138,6 +157,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 20
 end
 Poll.seed do |s|
   s.id = 21
@@ -145,6 +165,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 21
 end
 Poll.seed do |s|
   s.id = 22
@@ -152,6 +173,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 22
 end
 Poll.seed do |s|
   s.id = 23
@@ -159,6 +181,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 23
 end
 Poll.seed do |s|
   s.id = 24
@@ -166,6 +189,7 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 24
 end
 Poll.seed do |s|
   s.id = 25
@@ -173,4 +197,5 @@ Poll.seed do |s|
   s.question = '質問内容 質問内容 質問内容 質問内容 質問内容 質問内容 質問内容'
   s.choices = '選択肢その1 |||| 選択肢その2 |||| 選択肢その3 |||| 選択肢その4 |||| '
   s.limit = '2016-05-16 19:40:25 +0900'
+  s.user_id = 25
 end

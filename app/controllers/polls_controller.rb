@@ -3,6 +3,7 @@ class PollsController < ApplicationController
 
   def index
     @polls = Poll.page(params[:page]).per(12).order('id desc')
+
     respond_to do |format|
       format.html
       format.js
@@ -11,6 +12,7 @@ class PollsController < ApplicationController
 
   def show
     @answers = Answer.where(poll_id: params[:id]).group(:answer_num).count()
+    @user = @poll.user
     redirect_to result_path, notice: '投票は締め切りました' if @poll.limit < Time.current
   end
 
@@ -73,5 +75,6 @@ class PollsController < ApplicationController
   private
     def set_note
       @poll = Poll.find(params[:id])
+      @user = User.find(@poll.user_id)
     end
 end
