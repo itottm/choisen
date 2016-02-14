@@ -21,8 +21,12 @@
     <tr>
       <th>選択肢</th>
       <td>
-        <%= @poll.choices %>
-        <%= form.hidden_field :choices %>
+        <% @count = 0 %>
+      <% @poll.choices.each do |c| %>
+        <div><%= c.choice %></div>
+          <input type="hidden" name="poll[choices_attributes][<%= @count %>][choice]" value="<%= c.choice %>">
+          <% @count += 1 %>
+      <% end %>
       </td>
     </tr>
     <tr>

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :polls
+  has_many :polls, dependent: :destroy
   has_many :answers
 
   def self.new_guest

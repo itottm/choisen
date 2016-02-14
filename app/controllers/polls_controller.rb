@@ -19,6 +19,7 @@ class PollsController < ApplicationController
   def result
     @answers = Answer.where(poll_id: params[:id]).order(answer_num: :asc).group(:answer_num).count()
     @time = Time.now()
+    # binding.pry
   end
 
   def ajax_action
@@ -27,6 +28,7 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
+    3.times{@poll.choices.build}
   end
 
   def edit
@@ -34,13 +36,14 @@ class PollsController < ApplicationController
   end
 
   def confirm
-    @poll = Poll.new(params[:poll])
+    @poll = Poll.new(poll_params)
+    # binding.pry
     render :new if @poll.invalid?
   end
 
   def create
-    @poll = Poll.new(params[:poll])
-
+    @poll = Poll.new(poll_params)
+    # binding.pry
     if params[:back]
       render :new
     elsif @poll.save
@@ -51,9 +54,7 @@ class PollsController < ApplicationController
   end
 
   def update
-    # TODO : ストロングパラメータ対応する
-    @poll.assign_attributes(params[:poll])
-    # @poll.increment!(:answer01,1000)
+    @poll.assign_attributes(poll_params)
     if @poll.save
       redirect_to @poll, notice: '質問を更新しました。'
     else
@@ -76,5 +77,9 @@ class PollsController < ApplicationController
     def set_note
       @poll = Poll.find(params[:id])
       @user = User.find(@poll.user_id)
+    end
+
+    def poll_params
+    params.require(:poll).permit(:title, :question, :limit, :user_id, choices_attributes: [:choice, :poll_id])
     end
 end

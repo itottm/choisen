@@ -21,17 +21,18 @@
   </li>
   <li>
     選択肢<br>
-      <% choices_array.each do |value| %>
-        <%=f.radio_button :answer_num, choice_num %>
-        <%=f.label :answer_num, value, value: choice_num %>
-        <% choice_num = choice_num + 1 %>
-      <% end %>
+    <% @poll.choices.each do |c| %>
+      <%=f.radio_button :answer_num, choice_num %>
+      <%=f.label :answer_num, c.choice, value: choice_num %>
+      <% choice_num = choice_num + 1 %>
+    <% end %>
   </li>
   <li>
     期限<br>
     <%= limit_datetime %>
   </li>
 </ul>
+  <%= f.hidden_field :user_id , value: current_or_guest_user.id %>
 <p><%= f.submit '投票する' %></p>
 <% end %>
 

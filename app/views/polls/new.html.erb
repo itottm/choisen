@@ -12,14 +12,12 @@
       <%= form.label :question, '質問詳細' %>
       <%= form.text_field :question %>
     </li>
-    <li class="choicesItem">
-      <label for="choicesItem1">選択肢1</label>
-      <input type="text" id="choicesItem1" class="choicesItemInput">
-    </li>
-    <li class="choicesItem">
-      <label for="choicesItem2">選択肢2</label>
-      <input type="text" id="choicesItem2" class="choicesItemInput">
-    </li>
+    <%= form.fields_for :choices do |c| %>
+      <li class="choicesItem">
+        <%= c.label :choice, '選択肢1' %>
+        <%= c.text_field :choice, class:'choicesItemInput' %>
+      </li>
+    <% end %>
     <li>
       <%= form.label :limit, '期限' %>
       <%= form.select :limit, options_for_select(%w(15分 30分 1時間 3時間 6時間 12時間 24時間)) %>

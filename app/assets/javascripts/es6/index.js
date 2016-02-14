@@ -5,24 +5,26 @@ window.onload = function () {
 
   function addInput(event) {
     let $choicesItem = document.getElementsByClassName('choicesItem'),
-      choiceCount = $choicesItem.length + 1,
+      choiceCount = $choicesItem.length,
       $target = event.target.parentNode,
       joinText = "";
     if ($target.className === 'choicesItem') {
       if (!$target.nextElementSibling.classList.contains('choicesItem')) {
         var newList = document.createElement('li');
         newList.className = 'choicesItem';
-        newList.innerHTML = `<label for='choicesItem${choiceCount}'>選択肢${choiceCount}</label><input type='text' id='choicesItem${choiceCount}' class='choicesItemInput'>`;
+
+        newList.innerHTML = `<label for="poll_choices_attributes_${choiceCount}_choice">選択肢${choiceCount+1}</label><input id="poll_choices_attributes_${choiceCount}_choice" class="choicesItemInput" type="text" name="poll[choices_attributes][${choiceCount}][choice]">`;
+
         $target.parentNode.insertBefore(newList, $target.nextElementSibling);
         choiceCount++;
       }
     }
-    $(".choicesItemInput").each(function () {
-      if ($(this).val()) {
-        joinText += $(this).val() + ' |||| ';
-        $("#choices_text").val(joinText);
-      }
-    })
+    //$(".choicesItemInput").each(function () {
+    //  if ($(this).val()) {
+    //    joinText += $(this).val() + ' |||| ';
+    //    $("#choices_text").val(joinText);
+    //  }
+    //})
   }
 
   document.addEventListener('input', addInput, false);

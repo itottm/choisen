@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params[:answer].permit(:answer_num)
+    params[:answer].permit(:answer_num, :user_id)
   end
 
 end

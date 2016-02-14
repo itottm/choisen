@@ -1,6 +1,8 @@
 class Poll < ActiveRecord::Base
-  has_many :answers
   belongs_to :user
+  has_many :answers
+  has_many :choices
+  accepts_nested_attributes_for :choices
 
   class << self
     def search(query)
