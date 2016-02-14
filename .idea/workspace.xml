@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24fb571c-fa97-4c3e-8caa-6c1f9b126e18" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/fixtures/choice.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/es6/index.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/es6/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/answers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/answers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/polls_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/polls_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/poll.rb" afterPath="$PROJECT_DIR$/app/models/poll.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/polls/confirm.html.erb" afterPath="$PROJECT_DIR$/app/views/polls/confirm.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/polls/new.html.erb" afterPath="$PROJECT_DIR$/app/views/polls/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/polls/result.html.erb" afterPath="$PROJECT_DIR$/app/views/polls/result.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/polls/show.html.erb" afterPath="$PROJECT_DIR$/app/views/polls/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/fixtures/poll.rb" afterPath="$PROJECT_DIR$/db/fixtures/poll.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20151220142305_create_polls.rb" afterPath="$PROJECT_DIR$/db/migrate/20151220142305_create_polls.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
     </list>
     <ignored path="choisen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -139,14 +125,14 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6589435">
+    <splitter split-orientation="horizontal" split-proportion="0.56719184">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="polls_controller.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="polls_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/polls_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0234375">
+                  <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
                   <folding />
                 </state>
               </provider>
@@ -184,16 +170,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_header.html.erb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/shared/_header.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.75">
-                  <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="_footer.html.erb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
               <provider selected="true" editor-type-id="text-editor">
@@ -204,11 +180,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="result.html.erb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="result.html.erb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views/polls/result.html.erb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43396226">
-                  <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+                <state vertical-scroll-proportion="-89.117645">
+                  <caret line="303" column="21" selection-start-line="303" selection-start-column="21" selection-end-line="303" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="assets.rb" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
                   <folding />
                 </state>
               </provider>
@@ -352,7 +338,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.7473364">
+        <splitter split-orientation="vertical" split-proportion="0.40756303">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
@@ -373,6 +359,22 @@
                       <folding>
                         <marker date="1455437390000" expanded="true" signature="209:906" placeholder="{...}" />
                         <marker date="1455437390000" expanded="true" signature="483:574" placeholder="{&quot;loaded&quot;: false...}" />
+                        <marker date="1455437390000" expanded="true" signature="510:518" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="562:570" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="576:584" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="585:593" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="627:635" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="723:731" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="732:740" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="772:780" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="805:813" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="814:822" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="861:869" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="895:903" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="907:915" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="916:924" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="1075:1083" placeholder="/*...*/" />
+                        <marker date="1455437390000" expanded="true" signature="1270:1278" placeholder="/*...*/" />
                         <marker date="1455437390000" expanded="true" signature="1311:1319" placeholder="/*...*/" />
                         <marker date="1455437390000" expanded="true" signature="1323:1397" placeholder="/*...*/" />
                         <marker date="1455437390000" expanded="true" signature="1398:1406" placeholder="/*...*/" />
@@ -507,8 +509,8 @@
               <file leaf-file-name="application.scss" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="1.6521739">
-                      <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+                    <state vertical-scroll-proportion="0.4505814">
+                      <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
                       <folding />
                     </state>
                   </provider>
@@ -541,7 +543,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/polls/_sled_item.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/setting/sanitize.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/settings/_sanitize.scss" />
@@ -550,7 +551,6 @@
         <option value="$PROJECT_DIR$/app/views/polls/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/polls/index.js.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
         <option value="$PROJECT_DIR$/app/models/answer.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20151231001008_create_answers.rb" />
         <option value="$PROJECT_DIR$/app/views/polls/index.html.erb" />
@@ -580,7 +580,6 @@
         <option value="$PROJECT_DIR$/app/controllers/answers_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/es6/index.js" />
-        <option value="$PROJECT_DIR$/app/controllers/polls_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/polls/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/polls/confirm.html.erb" />
         <option value="$PROJECT_DIR$/app/views/polls/new.html.erb" />
@@ -591,7 +590,10 @@
         <option value="$PROJECT_DIR$/db/fixtures/user.rb" />
         <option value="$PROJECT_DIR$/db/fixtures/choice.rb" />
         <option value="$PROJECT_DIR$/db/fixtures/poll.rb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.scss" />
+        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/views/polls/result.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/polls_controller.rb" />
       </list>
     </option>
   </component>
@@ -623,8 +625,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="749" />
+    <option name="width" value="1788" />
+    <option name="height" value="941" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1253,6 +1255,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2029,12 +2035,12 @@
       <workItem from="1454494810102" duration="920000" />
       <workItem from="1454511436585" duration="9560000" />
       <workItem from="1454600123560" duration="83736000" />
-      <workItem from="1455187096953" duration="51802000" />
+      <workItem from="1455187096953" duration="68134000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="583766000" />
+    <option name="totallyTimeSpent" value="600098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2046,7 +2052,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="749" extended-state="6" />
+    <frame x="0" y="23" width="1788" height="941" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2057,14 +2063,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49785143" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Routes" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5555556" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27549466" sideWeight="0.48626816" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21319199" sideWeight="0.48626816" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12843296" sideWeight="0.7037815" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.091065295" sideWeight="0.7080838" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1365105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24937657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12843296" sideWeight="0.29621848" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.091065295" sideWeight="0.29191616" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39878234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2099,14 +2105,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160208132616_add_devise_to_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28784648">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/devise-3.5.6/app/controllers/devise/registrations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024509804">
@@ -2197,6 +2195,22 @@
           <folding>
             <marker date="1455437390000" expanded="true" signature="209:906" placeholder="{...}" />
             <marker date="1455437390000" expanded="true" signature="483:574" placeholder="{&quot;loaded&quot;: false...}" />
+            <marker date="1455437390000" expanded="true" signature="510:518" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="562:570" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="576:584" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="585:593" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="627:635" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="723:731" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="732:740" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="772:780" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="805:813" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="814:822" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="861:869" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="895:903" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="907:915" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="916:924" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="1075:1083" placeholder="/*...*/" />
+            <marker date="1455437390000" expanded="true" signature="1270:1278" placeholder="/*...*/" />
             <marker date="1455437390000" expanded="true" signature="1311:1319" placeholder="/*...*/" />
             <marker date="1455437390000" expanded="true" signature="1323:1397" placeholder="/*...*/" />
             <marker date="1455437390000" expanded="true" signature="1398:1406" placeholder="/*...*/" />
@@ -2228,14 +2242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6521739">
-          <caret line="94" column="29" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -2444,14 +2450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20151220142305_create_polls.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2492,14 +2490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/polls_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/b3a02489/fa6e9e26-5428-4caf-a456-1660c78d8201/answers">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2526,10 +2516,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4505814">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_footer.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/polls/result.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43396226">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state vertical-scroll-proportion="-89.117645">
+          <caret line="303" column="21" selection-start-line="303" selection-start-column="21" selection-end-line="303" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/polls_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0234375">
+          <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
           <folding />
         </state>
       </provider>
