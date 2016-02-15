@@ -13,13 +13,11 @@ SNS機能付きアンケート集計サービス
 - ユーザー登録・ログイン・フォローなどのSNS機能
 
 ## 利用する技術
-- CakePHP 2.6.12
-- PHP 5.6.8
-- JavaScript（jQuery）
+- Ruby on Rails 4.2.5
+- Ruby 2.2.1
+- JavaScript（ECMAScript2015）
 - CSS
 - Gulp
-
-※他に、ECMAScript2015、次世代CSSを予習も兼ねて取り入れてみる想定
 
 ## 対象ブラウザ
 ### PC
