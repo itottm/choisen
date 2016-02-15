@@ -28,7 +28,7 @@ class PollsController < ApplicationController
 
   def new
     @poll = Poll.new
-    3.times{@poll.choices.build}
+    @poll.choices.build
   end
 
   def edit
