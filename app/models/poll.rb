@@ -2,7 +2,9 @@ class Poll < ActiveRecord::Base
   belongs_to :user
   has_many :answers
   has_many :choices
-  accepts_nested_attributes_for :choices
+  accepts_nested_attributes_for :choices,
+                                allow_destroy: true,
+                                :reject_if => proc { |att| att[:choice].blank?}
 
   class << self
     def search(query)
