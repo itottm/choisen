@@ -15,22 +15,16 @@
 
 <p><%= link_to 'あたらしく質問する', :new_poll %></p>
 
-<%= paginate @polls, :remote => true %>
-
-
-<%= @users %>
-
 
 <% if @polls.present? %>
   <ul class="list-polls" id="listPolls">
-    <%= render :partial => 'list_polls', locals: { polls: @polls } %>
+    <%= render 'list_polls' %>
   </ul>
 <% else %>
   <p>現在質問がありません。</p>
 <% end %>
 
-
-<%= paginate @polls, :remote => true %>
+<%= paginate @polls %>
 
 
 <script type="text/javascript" src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
@@ -83,5 +77,18 @@
 //        type: 'GET'
 //      });
 //    };
+
+
+  $(function() {
+    return $("#listPolls").infinitescroll({
+      loading: {
+        finishedMsg: "<p>finished</p>",
+        msgText: "ロード中..."
+      },
+      navSelector: "nav.pagination",
+      nextSelector: "nav.pagination a[rel=next]",
+      itemSelector: "#listPolls li"
+    });
+  });
 </script>
 

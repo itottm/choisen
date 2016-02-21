@@ -11,8 +11,10 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-// require turbolinks
+//= require jquery.infinitescroll
+//= require turbolinks
 //= require_directory .
 // require websocket_rails/main
 

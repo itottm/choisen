@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'seed-fu', '~> 2.3'
+gem 'ffaker'
 gem 'websocket-rails'
 
 gem 'font-awesome-rails'
@@ -38,6 +39,7 @@ gem 'font-awesome-rails'
 gem 'sprockets'
 gem 'sprockets-es6', require: 'sprockets/es6'
 
+gem 'jquery-turbolinks'
 gem 'kaminari'
 gem 'devise'
 
@@ -57,6 +59,7 @@ group :development, :test do
   gem 'binding_of_caller'
 
   gem 'timecop'
+
 end
 
 group :development do

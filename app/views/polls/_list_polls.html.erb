@@ -1,4 +1,4 @@
- <% polls.each do |poll| %>
+    <% @polls.each do |poll| %>
       <li>
         <article>
           <%
@@ -13,8 +13,8 @@
           %>
           <%= link_to poll do %>
             <div class="poll-main-container">
-              <h2 class="hdg-01"><%= fa_icon 'question 2x' %> <%= poll.title %></h2>
-              <p><%= poll.question %></p>
+              <h2 class="hdg"><%= fa_icon 'question 2x' %><%= poll.title %></h2>
+              <p class="txt"><%= fa_icon 'comment-o lg' %><%= poll.question %></p>
             </div>
             <div class="poll-info-container
             <% if limit_time < @current_date %>
@@ -30,10 +30,10 @@
               </p>
               <p class="time-info">
                 <% if limit_time > @current_date  %>
-                  <span class="text">終了まであと</span>
+                  <span class="text"><%= fa_icon 'clock-o lg' %>終了まであと</span>
                   <span class="time"><%= msg %></span>
                 <% else %>
-                  <span class="text">投票受付終了</span>
+                  <span class="text"><%= fa_icon 'clock-o lg' %>投票受付終了</span>
                   <span class="time"><%= Time.parse(poll.limit).strftime('%-m/%d %H:%M') %></span>
                 <% end %>
 

@@ -37,13 +37,11 @@ class PollsController < ApplicationController
 
   def confirm
     @poll = Poll.new(poll_params)
-    # binding.pry
     render :new if @poll.invalid?
   end
 
   def create
     @poll = Poll.new(poll_params)
-    # binding.pry
     if params[:back]
       render :new
     elsif @poll.save
