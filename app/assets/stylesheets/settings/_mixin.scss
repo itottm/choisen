@@ -1,0 +1,32 @@
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+
+@mixin mq-larger{
+  @media screen and (min-width: $bp-large + 1){
+    @content;
+  }
+}
+
+@mixin mq-large{
+  @media (min-width: $bp-middle + 1) and (max-width: $bp-large){
+    @content;
+  }
+}
+
+@mixin mq-middle{
+  @media (min-width: $bp-small + 1) and (max-width: $bp-middle){
+    @content;
+  }
+}
+
+@mixin mq-small{
+  @media screen and (max-width: $bp-small){
+    @content;
+  }
+}

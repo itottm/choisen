@@ -5,30 +5,27 @@
   limit_datetime = l @poll.limit.to_datetime, format: :short
 %>
 
-<h1><%= @page_title %></h1>
-<%= @user.area %>
-<%= @user.age %>
-<%= @user.gender %>
+<h1><%= fa_icon 'question 2x' %><%= @page_title %></h1>
 <%= form_for [@poll,@poll.answers.build] do |f| %>
 <ul class="list-show-poll">
   <li>
-    質問タイトル<br>
-    <%= @poll.title %>
+    <h2 class="hdg"><%= fa_icon 'user lg' %>質問者</h2>
+    <%= @user.username %> <%= @user.gender %> <%= @user.age %> <%= @user.area %>
   </li>
   <li>
-    質問詳細<br>
+    <h2 class="hdg"><%= fa_icon 'comment-o lg' %>質問詳細</h2>
     <%= @poll.question %>
   </li>
   <li>
-    選択肢<br>
+    <h2 class="hdg"><%= fa_icon 'hand-pointer-o lg' %>選択肢</h2>
     <% @poll.choices.each do |c| %>
       <%=f.radio_button :answer_num, choice_num %>
-      <%=f.label :answer_num, c.choice, value: choice_num %>
+      <%=f.label :answer_num, c.choice, value: choice_num , class: 'choice-radio' %>
       <% choice_num = choice_num + 1 %>
     <% end %>
   </li>
   <li>
-    期限<br>
+    <h2 class="hdg"><%= fa_icon 'clock-o' %>期限</h2>
     <%= limit_datetime %>
   </li>
 </ul>
@@ -37,6 +34,6 @@
 <% end %>
 
 
-<p><%= link_to '編集する', [:edit, @poll] %></p>
+<!--<p><%#= link_to '編集する', [:edit, @poll] %></p>-->
 
 <p><%= link_to '結果だけ見る',result_path %></p>

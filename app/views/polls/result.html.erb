@@ -8,36 +8,40 @@
       limitTime = <%= limit_time * 1000 %>
 </script>
 
-<h1><%= @page_title %></h1>
+<h1><%= fa_icon 'question 2x' %> <%= @page_title %></h1>
 
 <!-- 残り時間表示 -->
 <p id="RealtimeCountdownArea"></p>
 
-<table>
-  <tr>
-    <th>質問タイトル</th>
-    <td><%= @poll.title %></td>
-  </tr>
-  <tr>
-    <th>質問詳細</th>
-    <td><%= @poll.question %></td>
-  </tr>
-  <tr>
-    <th>選択肢</th>
-    <td>
-      <ul>
-        <% @poll.choices.each do |c| %>
-          <li><%= c.choice %></li>
-        <% end %>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <th>質問者</th>
-    <td>
-      <%= @user.username %>さん <%= @user.gender %> <%= @user.age %> <%= @user.area %>
-    </td>
-  </tr>
+<table class="tbl-result">
+  <tbody>
+    <tr>
+      <th><%= fa_icon 'user lg' %>質問者</th>
+      <td>
+        <%= @user.username %>さん <%= @user.gender %> <%= @user.age %> <%= @user.area %>
+      </td>
+    </tr>
+    <tr>
+      <th><%= fa_icon 'comment-o lg' %>質問詳細</th>
+      <td><%= @poll.question %></td>
+    </tr>
+    <tr>
+      <th><%= fa_icon 'hand-pointer-o lg' %>選択肢</th>
+      <td>
+        <ul>
+          <% @poll.choices.each do |c| %>
+            <li><%= c.choice %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <th><%= fa_icon 'clock-o lg' %>期限</th>
+      <td>
+        <%= l @poll.limit.to_datetime, format: :short %>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- グラフ表示 -->
@@ -98,7 +102,6 @@
     "answer": 0,
     "color": "<%= color %>"
   });
-  console.log(answerData);
   <%
   i = i + 1
   end
