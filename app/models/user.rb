@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :polls, dependent: :destroy
   has_many :answers
 
+  # prefecture_code:integer
+  include JpPrefecture
+  jp_prefecture :prefecture_code
+
   def self.new_guest
     new do |u|
       u.username = 'Guest'

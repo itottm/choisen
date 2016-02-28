@@ -18,8 +18,7 @@ class PollsController < ApplicationController
 
   def result
     @answers = Answer.where(poll_id: params[:id]).order(answer_num: :asc).group(:answer_num).count()
-    @time = Time.now()
-    # binding.pry
+     # binding.pry
   end
 
   def ajax_action

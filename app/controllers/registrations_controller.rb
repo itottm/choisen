@@ -8,13 +8,13 @@ class RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
     devise_parameter_sanitizer.for(:sign_up) {
-        |u| u.permit(:username,:email,:gender,:age,:area,:password,:password_confirmation)
+        |u| u.permit(:username,:email,:gender,:age,:prefecture_code,:password,:password_confirmation)
     }
     super
   end
   def account_update_params
     devise_parameter_sanitizer.for(:account_update) {
-        |u| u.permit(:username,:email,:gender,:age,:area,:password,:password_confirmation,:current_password)
+        |u| u.permit(:username,:email,:gender,:age,:prefecture_code,:password,:password_confirmation,:current_password)
     }
     super
   end

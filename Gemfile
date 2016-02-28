@@ -43,6 +43,8 @@ gem 'jquery-turbolinks'
 gem 'kaminari'
 gem 'devise'
 
+gem 'jp_prefecture'
+
 group :development, :test do
 # Use sqlite3 as the database for Active Record
   gem 'sqlite3'

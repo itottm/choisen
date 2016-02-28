@@ -14,7 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.infinitescroll
-//= require turbolinks
+// require turbolinks
 //= require_directory .
 // require websocket_rails/main
 

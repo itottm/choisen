@@ -10,7 +10,7 @@
 <ul class="list-show-poll">
   <li>
     <h2 class="hdg"><%= fa_icon 'user lg' %>質問者</h2>
-    <%= @user.username %> <%= @user.gender %> <%= @user.age %> <%= @user.area %>
+    <%= @user.username %> <%= @user.gender %> <%= @user.age %> <%= @user.prefecture.name %>
   </li>
   <li>
     <h2 class="hdg"><%= fa_icon 'comment-o lg' %>質問詳細</h2>
@@ -18,11 +18,15 @@
   </li>
   <li>
     <h2 class="hdg"><%= fa_icon 'hand-pointer-o lg' %>選択肢</h2>
-    <% @poll.choices.each do |c| %>
-      <%=f.radio_button :answer_num, choice_num %>
-      <%=f.label :answer_num, c.choice, value: choice_num , class: 'choice-radio' %>
-      <% choice_num = choice_num + 1 %>
-    <% end %>
+    <ul class="choices-list">
+      <li>
+        <% @poll.choices.each do |c| %>
+          <%=f.radio_button :answer_num, choice_num %>
+          <%=f.label :answer_num, c.choice, value: choice_num , class: 'choice-radio' %>
+          <% choice_num = choice_num + 1 %>
+        <% end %>
+      </li>
+    </ul>
   </li>
   <li>
     <h2 class="hdg"><%= fa_icon 'clock-o' %>期限</h2>

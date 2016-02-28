@@ -11,14 +11,17 @@
 <h1><%= fa_icon 'question 2x' %> <%= @page_title %></h1>
 
 <!-- 残り時間表示 -->
-<p id="RealtimeCountdownArea"></p>
+<p id="realtimeCountdownArea"></p>
+
+<!-- グラフ表示 -->
+<div id="chartArea"></div>
 
 <table class="tbl-result">
   <tbody>
     <tr>
       <th><%= fa_icon 'user lg' %>質問者</th>
       <td>
-        <%= @user.username %>さん <%= @user.gender %> <%= @user.age %> <%= @user.area %>
+        <%= @user.username %>さん <%= @user.gender %> <%= @user.age %> <%= @user.prefecture.name %>
       </td>
     </tr>
     <tr>
@@ -44,8 +47,6 @@
   </tbody>
 </table>
 
-<!-- グラフ表示 -->
-<div id="chartArea"></div>
 
 <!-- マップ表示 -->
 <div id="chartMapArea"></div>
@@ -66,11 +67,11 @@
       // まだ期限が来ていない場合
       msg = "投票終了まで、あと" + msg + "です。";
 //      clearInterval(showCountdown());
-      document.getElementById("RealtimeCountdownArea").innerHTML = msg;
+      document.getElementById("realtimeCountdownArea").innerHTML = msg;
     }
     else {
       msg = "投票は締め切りました";
-      document.getElementById("RealtimeCountdownArea").innerHTML = msg;
+      document.getElementById("realtimeCountdownArea").innerHTML = msg;
       clearInterval(showCountdown(timerId));
     }
     currentTime += 1000;
@@ -88,10 +89,9 @@
 
   <%
   i = 0
-  # choices_length = @answers.length
+
   choices_length = @poll.choices.length
 
-  # @answers.each do |key,value|
   choices_length.times do |i|
 
   hue = i * (360 / choices_length)
@@ -147,223 +147,70 @@
   //マップ
   jQuery.getJSON( "https://freegeoip.net/json/", function( geo ) {
 
-    var defaultMap = "usaLow";
-    var countryMaps = {
-      "AF": [ "afghanistanLow" ],
-      "AL": [ "albaniaLow" ],
-      "DZ": [ "algeriaLow" ],
-      "AD": [ "andorraLow" ],
-      "AO": [ "angolaLow" ],
-      "AR": [ "argentinaLow" ],
-      "AM": [ "armeniaLow" ],
-      "AU": [ "australiaLow" ],
-      "AT": [ "austriaLow" ],
-      "AZ": [ "azerbaijanLow" ],
-      "BS": [ "bahamasLow" ],
-      "BH": [ "bahrainLow" ],
-      "BD": [ "bangladeshLow" ],
-      "BY": [ "belarusLow" ],
-      "BE": [ "belgiumLow" ],
-      "BZ": [ "belizeLow" ],
-      "BT": [ "bhutanLow" ],
-      "BO": [ "boliviaLow" ],
-      "BA": [ "bosniaHerzegovinaCantonsLow" ],
-      "BW": [ "botswanaLow" ],
-      "BR": [ "brazilLow" ],
-      "BN": [ "bruneiDarussalamLow" ],
-      "BG": [ "bulgariaLow" ],
-      "BF": [ "burkinaFasoLow" ],
-      "BI": [ "burundiLow" ],
-      "KH": [ "cambodiaLow" ],
-      "CM": [ "cameroonLow" ],
-      "CA": [ "canadaLow" ],
-      "CV": [ "capeVerdeLow" ],
-      "CF": [ "centralAfricanRepublicLow" ],
-      "TD": [ "chadLow" ],
-      "CL": [ "chileLow" ],
-      "CN": [ "chinaLow" ],
-      "CO": [ "colombiaLow" ],
-      "CD": [ "congoDRLow" ],
-      "CG": [ "congoLow" ],
-      "CR": [ "costaRicaLow" ],
-      "HR": [ "croatiaLow" ],
-      "CU": [ "cubaLow" ],
-      "CY": [ "cyprusLow" ],
-      "UN": [ "cyprusNorthernCyprusLow" ],
-      "GB": [ "unitedKingdomLow" ],
-      "CZ": [ "czechRepublicLow" ],
-      "DK": [ "denmarkLow" ],
-      "DJ": [ "djiboutiLow" ],
-      "DO": [ "dominicanRepublicLow" ],
-      "EC": [ "ecuadorLow" ],
-      "EG": [ "egyptLow" ],
-      "SV": [ "elSalvadorLow" ],
-      "EE": [ "estoniaLow" ],
-      "FI": [ "finlandLow" ],
-      "FR": [ "france2016Low" ],
-      "GE": [ "georgiaLow" ],
-      "DE": [ "germanyLow" ],
-      "GR": [ "greeceLow" ],
-      "GT": [ "guatemalaLow" ],
-      "GN": [ "guineaLow" ],
-      "GY": [ "guyanaLow" ],
-      "HT": [ "haitiLow" ],
-      "HN": [ "hondurasLow" ],
-      "HK": [ "hongKongLow" ],
-      "HU": [ "hungaryLow" ],
-      "GL": [ "icelandLow" ],
-      "IS": [ "icelandLow" ],
-      "IN": [ "indiaLow" ],
-      "ID": [ "indonesiaLow" ],
-      "MY": [ "malaysiaLow" ],
-      "IR": [ "iranLow" ],
-      "IQ": [ "iraqLow" ],
-      "IE": [ "irelandLow" ],
-      "IL": [ "israelLow" ],
-      "PS": [ "palestineLow" ],
-      "VA": [ "italyLow" ],
-      "SM": [ "sanMarinoLow" ],
-      "MT": [ "italyLow" ],
-      "IT": [ "italyLow" ],
-      "JM": [ "jamaicaLow" ],
-      "JP": [ "japanLow" ],
-      "KZ": [ "kazakhstanLow" ],
-      "KE": [ "kenyaLow" ],
-      "XK": [ "kosovoLow" ],
-      "KG": [ "kyrgyzstanLow" ],
-      "LA": [ "laosLow" ],
-      "LV": [ "latviaLow" ],
-      "LT": [ "lithuaniaLow" ],
-      "LU": [ "luxembourgLow" ],
-      "MK": [ "macedoniaLow" ],
-      "ML": [ "maliLow" ],
-      "MX": [ "mexicoLow" ],
-      "MD": [ "moldovaLow" ],
-      "MN": [ "mongoliaLow" ],
-      "ME": [ "montenegroLow" ],
-      "MA": [ "moroccoLow" ],
-      "MM": [ "myanmarLow" ],
-      "NP": [ "nepalLow" ],
-      "NL": [ "netherlandsLow" ],
-      "NZ": [ "newZealandLow" ],
-      "NI": [ "nicaraguaLow" ],
-      "NG": [ "nigeriaLow" ],
-      "NO": [ "norwayLow" ],
-      "AE": [ "unitedArabEmiratesLow" ],
-      "OM": [ "omanLow" ],
-      "PK": [ "pakistanLow" ],
-      "PA": [ "panamaLow" ],
-      "PY": [ "paraguayLow" ],
-      "PE": [ "peruLow" ],
-      "PH": [ "philippinesLow" ],
-      "PL": [ "polandLow" ],
-      "PT": [ "portugalLow" ],
-      "PR": [ "puertoRicoLow" ],
-      "US": [ "usaLow" ],
-      "QA": [ "qatarLow" ],
-      "RO": [ "romaniaLow" ],
-      "RW": [ "rwandaLow" ],
-      "SA": [ "saudiArabiaLow" ],
-      "RS": [ "serbiaLow" ],
-      "SG": [ "singaporeLow" ],
-      "SK": [ "slovakiaLow" ],
-      "SI": [ "sloveniaLow" ],
-      "LS": [ "southAfricaLow" ],
-      "ZA": [ "southAfricaLow" ],
-      "KR": [ "southKoreaLow" ],
-      "ES": [ "spainLow" ],
-      "LK": [ "sriLankaLow" ],
-      "SR": [ "surinameLow" ],
-      "SE": [ "swedenLow" ],
-      "CH": [ "switzerlandLow" ],
-      "SY": [ "syriaLow" ],
-      "TW": [ "taiwanLow" ],
-      "TJ": [ "tajikistanLow" ],
-      "TH": [ "thailandLow" ],
-      "TR": [ "turkeyLow" ],
-      "UG": [ "ugandaLow" ],
-      "UA": [ "ukraineLow" ],
-      "GG": [ "unitedKingdomLow" ],
-      "JE": [ "unitedKingdomLow" ],
-      "IM": [ "unitedKingdomLow" ],
-      "UY": [ "uruguayLow" ],
-      "UZ": [ "uzbekistanLow" ],
-      "VE": [ "venezuelaLow" ],
-      "VN": [ "vietnamLow" ],
-      "YE": [ "yemenLow" ]
-    };
+  } );
+</script>
 
-    // calculate which map to be used
-    var currentMap = defaultMap;
-    var titles = [];
-    if ( countryMaps[ geo.country_code ] !== undefined ) {
-      currentMap = countryMaps[ geo.country_code ][ 0 ];
+<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/japanLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+<script type="text/javascript" charset="utf-8">
+  var map = AmCharts.makeChart( "chartMapArea", {
+    type: "map",
+    "theme": "none",
 
+    backgroundColor: "#f00000",
+
+    colorSteps: 10,
+
+    dataProvider: {
+      map: "japanLow",
+      areas: [ {
+          id: "JP-01", value: 9
+        },
+        {
+          id: "JP-03", value: 8
+        },
+        {
+          id: "JP-06", value: 11
+        },
+        {
+          id: "JP-10", value: 9
+        },
+        {
+          id: "JP-11", value: 9
+        },
+        {
+          id: "JP-12", value: 9
+        },
+        {
+          id: "JP-13", value: 20
+        },
+        {
+          id: "JP-14", value: 9
+        }
+      ],
+      "images": [
+        {
+          "top": 0,
+          "left": -200
+        }
+      ]
+    },
+
+    areasSettings: {
+      autoZoom: false,
+      balloonText: "[[title]]: <strong>[[value]]</strong>"
+    },
+
+    valueLegend: {
+      right: 10,
+      minValue: "little",
+      maxValue: "a lot!"
+    },
+
+    "export": {
+      "enabled": true
     }
 
-    var map = AmCharts.makeChart( "chartMapArea", {
-      "type": "map",
-      "theme": "default",
-      "colorSteps": 50,
-      "dataProvider": {
-        "mapURL": "/assets/map/" + currentMap + ".svg",
-        "getAreasFromMap": true,
-        "zoomLevel": 1.0,
-        "areas": [
-          {
-            id: "JP-01", value: 9
-          },
-          {
-            id: "JP-03", value: 8
-          },
-          {
-            id: "JP-06", value: 11
-          },
-          {
-            id: "JP-10", value: 9
-          },
-          {
-            id: "JP-11", value: 9
-          },
-          {
-            id: "JP-12", value: 9
-          },
-          {
-            id: "JP-13", value: 20
-          },
-          {
-            id: "JP-14", value: 9
-          }
-
-        ]
-      },
-      "areasSettings": {
-        "autoZoom": true,
-        "balloonText": "[[title]]: <strong>[[value]]</strong>"
-      },
-      "valueLegend": {
-        "right": 10,
-        "minValue": "little",
-        "maxValue": "a lot!"
-      },
-      "zoomControl": {
-        "minZoomLevel": 0.9
-      },
-      "titles": titles,
-      "listeners":[{"event":"init", "method":updateHeatmap}]
-    } );
-
-
-    function updateHeatmap(event) {
-      var map = event.chart;
-      if ( map.dataGenerated )
-        return;
-      if ( map.dataProvider.areas.length === 0 ) {
-        setTimeout( updateHeatmap, 100 );
-        return;
-      }
-      map.dataGenerated = true;
-      map.validateNow();
-    }
   } );
 </script>
