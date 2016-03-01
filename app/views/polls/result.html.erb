@@ -47,6 +47,7 @@
   </tbody>
 </table>
 
+<h2>回答者の都道府県</h2>
 
 <!-- マップ表示 -->
 <div id="chartMapArea"></div>
@@ -93,15 +94,14 @@
   choices_length = @poll.choices.length
 
   choices_length.times do |i|
-
-  hue = i * (360 / choices_length)
-  color = "hsl(#{hue}, 100%, 60%)"
-  %>
-  answerData.push({
-    "choices": "<%= i+ 1 %>",
-    "answer": 0,
-    "color": "<%= color %>"
-  });
+    hue = i * (360 / choices_length)
+    color = "hsl(#{hue}, 100%, 60%)"
+    %>
+    answerData.push({
+      "choices": "<%= i+ 1 %>",
+      "answer": 0,
+      "color": "<%= color %>"
+    });
   <%
   i = i + 1
   end
@@ -144,16 +144,23 @@
 
   });
 
-  //マップ
-  jQuery.getJSON( "https://freegeoip.net/json/", function( geo ) {
-
-  } );
 </script>
 
 <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/japanLow.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
+  var userPrefectureData = [];
+
+  <% @users.each do |key, value| %>
+    <%= sprintf("%02d",key) %>
+    <%= value %>
+    userPrefectureData.push({
+      "id": "JP-<%= sprintf("%02d",key) %>",
+      "value": "<%= value %>"
+    });
+  <% end %>
+
   var map = AmCharts.makeChart( "chartMapArea", {
     type: "map",
     "theme": "none",
@@ -164,31 +171,7 @@
 
     dataProvider: {
       map: "japanLow",
-      areas: [ {
-          id: "JP-01", value: 9
-        },
-        {
-          id: "JP-03", value: 8
-        },
-        {
-          id: "JP-06", value: 11
-        },
-        {
-          id: "JP-10", value: 9
-        },
-        {
-          id: "JP-11", value: 9
-        },
-        {
-          id: "JP-12", value: 9
-        },
-        {
-          id: "JP-13", value: 20
-        },
-        {
-          id: "JP-14", value: 9
-        }
-      ],
+      areas: userPrefectureData,
       "images": [
         {
           "top": 0,

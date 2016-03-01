@@ -96,6 +96,7 @@
       <column name="username" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="gender" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="area" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="prefecture_code" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="age" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="0" scale="-1" nullable="false" jdbcType="12"/>

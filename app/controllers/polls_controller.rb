@@ -18,6 +18,7 @@ class PollsController < ApplicationController
 
   def result
     @answers = Answer.where(poll_id: params[:id]).order(answer_num: :asc).group(:answer_num).count()
+    @users = Answer.joins(:user).where(poll_id: params[:id]).group(:prefecture_code).count()
      # binding.pry
   end
 

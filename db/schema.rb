@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20160211090344) do
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "gender"
-    t.string   "area"
     t.integer  "prefecture_code"
     t.string   "age"
     t.datetime "created_at",                             null: false
