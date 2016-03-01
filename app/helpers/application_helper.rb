@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title
-    title = 'Choisen'
+    title = 'ちょい選'
     title = @page_title + ' - ' + title if @page_title
     title
   end

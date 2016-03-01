@@ -21,7 +21,11 @@
 <header class="str-header">
 <%=	render 'shared/header' %>
 </header>
+
 <main class="str-main">
+  <% if flash.alert %>
+<p class="alert"><%= alert %></p>
+  <% end %>
 <% if flash.notice %>
 <p class="notice"><%= flash.notice %></p>
 <% end %>

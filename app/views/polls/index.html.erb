@@ -1,10 +1,8 @@
 <%
-  @page_title = '質問一覧'
+  @page_title = 'ちょい選 〜ちょいっと質問、ちょいっと選択'
   @move_header = true
   @current_date = Time.current.to_i
 %>
-
-<h1><%= @page_title %></h1>
 
 <%= form_tag :search_polls, method: :get do %>
   <p>

@@ -26,13 +26,28 @@ ul{
   }
 }
 .str-header{
-  position:relative;
-  min-height:100px;
-  .hdg{
-    margin:0;
-    line-height:100px;
+  margin-bottom:20px;
+  .str-header-inner{
     position:relative;
-    z-index:1;
+    max-width:1080px;
+    .hdg{
+      margin:0;
+      padding-top:30px;
+      padding-bottom:35px;
+      line-height:1;
+      position:relative;
+      z-index:1;
+    }
+    .sub{
+      font-size:1.2rem;
+    }
+  }
+  .nav-user{
+    background-color:#009872;
+    border-top:1px solid #008564;
+    padding-top:3px;
+    padding-bottom:3px;
+    font-size:1.2rem;
   }
 }
 .str-footer{
@@ -52,6 +67,7 @@ ul{
 #logoCanvas{
   position:absolute;
   right:0;
+  bottom:0;
   left:0;
   margin:0 auto;
 }
@@ -279,5 +295,8 @@ ul{
   background-color:#ccf;
 }
 
+#infscr-loading{
+  margin:15px;
+}
 
 
