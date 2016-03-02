@@ -1,6 +1,6 @@
 class PollsController < ApplicationController
   before_action :set_note,only:[:show,:result,:edit,:update,:destroy]
-  before_action :authenticate_user!, only: :show
+  before_action :authenticate_user!, only: [:show,:new]
 
   def index
     # @polls = Poll.page(params[:page]).per(12).order('id desc')

@@ -13,7 +13,7 @@ window.onload = function () {
         var newList = document.createElement('li');
         newList.className = 'choicesItem';
 
-        newList.innerHTML = `<label for="poll_choices_attributes_${choiceCount}_choice">選択肢${choiceCount+1}</label><input id="poll_choices_attributes_${choiceCount}_choice" class="choicesItemInput" type="text" name="poll[choices_attributes][${choiceCount}][choice]">`;
+        newList.innerHTML = `<input id="poll_choices_attributes_${choiceCount}_choice" class="choicesItemInput" type="text" name="poll[choices_attributes][${choiceCount}][choice]">`;
 
         $target.parentNode.insertBefore(newList, $target.nextElementSibling);
         choiceCount++;
