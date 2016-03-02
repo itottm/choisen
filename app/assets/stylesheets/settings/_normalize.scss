@@ -297,6 +297,8 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
+  border:0;
+  margin:0;
 }
 
 /**
@@ -429,3 +431,4 @@ td,
 th {
   padding: 0;
 }
+

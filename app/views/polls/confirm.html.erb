@@ -3,7 +3,7 @@
 <h1><%= @page_title %></h1>
 
 <%= form_for @poll do |form| %>
-  <table class="tbl_poll">
+  <table class="tbl-poll">
     <tr>
       <th>質問タイトル</th>
       <td>
@@ -38,7 +38,7 @@
     </tr>
   </table>
   <%= form.hidden_field :user_id , value: current_or_guest_user.id %>
-  <p><%= form.submit '作成！' %></p>
-  <p><%= form.submit '前の画面に戻る', name: 'back' %></p>
+  <p class="tx-center"><%= form.submit '作成！', class: 'btn submit' %></p>
+  <p class="tx-center"><%= form.submit '前の画面に戻る', name: 'back', class: 'btn' %></p>
 <% end %>
 

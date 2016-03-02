@@ -34,10 +34,10 @@
   </li>
 </ul>
   <%= f.hidden_field :user_id , value: current_or_guest_user.id %>
-<p><%= f.submit '投票する' %></p>
+<div class="tx-center"><%= f.submit '投票する', class: 'btn submit' %></div>
 <% end %>
 
 
 <!--<p><%#= link_to '編集する', [:edit, @poll] %></p>-->
 
-<p><%= link_to '結果だけ見る',result_path %></p>
+<p class="btn"><%= link_to '結果だけ見る',result_path %></p>

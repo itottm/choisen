@@ -3,7 +3,10 @@ class PollsController < ApplicationController
   before_action :authenticate_user!, only: :show
 
   def index
-    @polls = Poll.page(params[:page]).per(12).order('id desc')
+    # @polls = Poll.page(params[:page]).per(12).order('id desc')
+
+    @search = Poll.ransack(params[:q])
+    @polls = @search.result.page(params[:page]).per(12).order('id desc')
 
     respond_to do |format|
       format.html
@@ -64,11 +67,6 @@ class PollsController < ApplicationController
   def destroy
     @poll.destroy
     redirect_to :polls, notice: '質問を削除しました'
-  end
-
-  def search
-    @polls = Poll.search(params[:q])
-    render :index
   end
 
 

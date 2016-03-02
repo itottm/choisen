@@ -75,6 +75,7 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.11.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.6.7.1, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="orm_adapter (v0.5.0, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="polyamorous (v1.3.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.3, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-byebug (v3.3.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-doc (v0.8.0, rbenv: 2.2.1) [gem]" level="application" />
@@ -88,6 +89,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.5, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, rbenv: 2.2.1) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ransack (v1.7.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="redis (v3.2.2, rbenv: 2.2.1) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="redis-objects (v1.2.1, rbenv: 2.2.1) [gem]" level="application" />

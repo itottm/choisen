@@ -4,14 +4,12 @@
   @current_date = Time.current.to_i
 %>
 
-<%= form_tag :search_polls, method: :get do %>
-  <p>
-    <%= text_field_tag 'q', params[:q] %>
-    <%= submit_tag '検索' %>
-  </p>
+<%= search_form_for @search do |f| %>
+  <%= f.text_field :title_or_question_cont %>
+  <%= f.submit '検索' %>
 <% end %>
 
-<p><%= link_to 'あたらしく質問する', :new_poll %></p>
+<p class="btn new"><%= link_to 'あたらしく質問する', :new_poll %></p>
 
 
 <% if @polls.present? %>
