@@ -3,20 +3,20 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :username, 'お名前' %><br />
+  <div class="field"><%= f.label :username, 'お名前' %><br />
     <%= f.text_field :username %>
   </div>
 
-  <div>
+  <div class="field">
     <label><%= f.radio_button :gender, '男性' %>男性</label>
     <label><%= f.radio_button :gender, '女性' %>女性</label>
   </div>
 
-  <div><%= f.label :age, '年代' %><br />
+  <div class="field"><%= f.label :age, '年代' %><br />
     <%= f.select :age, %w(10才未満 10-14歳 15-19歳 20-24歳 25-29歳 30-34歳 35-39歳 40-44歳 45-49歳 50-54歳 55-59歳 60-64歳 65-69歳 70-74歳 75-79歳 80-84歳 85-89歳 90-94歳 95-99歳 100歳以上),{include_blank: '選択してください'} %>
   </div>
 
-  <div><%= f.label :prefecture_code, 'お住まい' %><br />
+  <div class="field"><%= f.label :prefecture_code, 'お住まい' %><br />
     <%=f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name,{include_blank: '選択してください'} %>
   </div>
 
