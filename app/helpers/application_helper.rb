@@ -5,9 +5,9 @@ module ApplicationHelper
     title
   end
 
-  def move_header
-    move = false
-    move = true if @move_header
-    move
+  def animate_header
+    animate_header = false
+    animate_header = true if @animate_header
+    animate_header
   end
 end
