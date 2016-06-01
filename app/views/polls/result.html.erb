@@ -3,11 +3,6 @@
    current_date = Time.current.to_i
    limit_time = Time.parse(@poll.limit).to_i
 %>
-<script>
-  var currentTime = <%= current_date * 1000 %>,
-      limitTime = <%= limit_time * 1000 %>
-</script>
-
 <h1><%= fa_icon 'question 2x' %> <%= @page_title %></h1>
 
 <!-- 残り時間表示 -->
@@ -56,8 +51,11 @@
 <p class="btn mt30 mb30"><%= link_to 'トップへ戻る', '/' %></p>
 
 <script>
-  function showCountdown() {
-    var diff2Dates = limitTime - currentTime;
+  var currentTime = <%= current_date * 1000 %>,
+      limitTime = <%= limit_time * 1000 %>;
+
+  function showCountdown(limit, current) {
+    var diff2Dates = limit - current;
 
     diff2Dates = diff2Dates % ( 1000 * 60 * 60 * 24 );
     var dHour = diff2Dates / ( 1000 * 60 * 60 ); // 時間
@@ -67,20 +65,19 @@
     var dSec = diff2Dates / 1000; // 秒
     var msg = Math.floor(dHour) + "時間" + Math.floor(dMin) + "分" + Math.floor(dSec) + "秒";
 
-    if (limitTime > currentTime) {
+    if (limit > current) {
       // まだ期限が来ていない場合
       msg = "投票終了まで、あと" + msg + "です。";
-//      clearInterval(showCountdown());
       document.getElementById("realtimeCountdownArea").innerHTML = msg;
     }
     else {
       msg = "投票は締め切りました";
       document.getElementById("realtimeCountdownArea").innerHTML = msg;
-      clearInterval(showCountdown(timerId));
+      clearInterval(timerId);
     }
     currentTime += 1000;
   }
-  var timerId = setInterval('showCountdown()', 1000);
+  var timerId = setInterval('showCountdown(limitTime, currentTime)', 1000);
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ammaps/3.13.0/ammap.css">
